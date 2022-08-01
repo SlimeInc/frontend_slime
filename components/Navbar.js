@@ -1,9 +1,33 @@
 import Link from "next/link";
-import styled from "styled-components";
+import styles from './Navbar.module.scss'
+import detectEthereumProvider from '@metamask/detect-provider'
+
+
 
 function Navbar() {
+
+  const HandleLogin = async ()=>{
+    const provider = await detectEthereumProvider({mustBeMetaMask:true})
+
+    if (provider) {
+    
+      console.log('Ethereum successfully detected!')
+      // From now on, this should always be true:
+      // provider === window.ethereum
+    
+      // Access the decentralized web!
+    
+      // Legacy providers may only have ethereum.sendAsync
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      const account = accounts[0];
+    } else {
+    
+      // if the provider is not detected, detectEthereumProvider resolves to null
+      alert('Please install MetaMask!')
+    }
+  }
   return (
-    <Navigation>
+    <div className={styles.Navigation}>
       <div>
         <Link href="/">
           <a> DigiCrypt </a>
@@ -31,38 +55,11 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <NavButton> SignUp </NavButton>
+          <button className={styles.NavButton} onClick={()=>HandleLogin()}> SignUp </button>
         </li>
       </ul>
-    </Navigation>
+    </div >
   );
 }
-const Navigation = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 65px;
-  padding: 5px;
-  left: 0px;
-  top: 0px;
-  display: flex;
-  flex-direction:row;
-  align-items:center;
-  justify-content:space-between;
-  background: #3c3c3d;
-  ul {
-  list-style-type: none;
-  display:flex;
-  flex-direction:row;
-  width:50%;
-  align-items:center;
-  justify-content:space-around;
-}
-`;
-const NavButton = styled.button`
-background: #FFFFFF;
-box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
-border-radius: 28px;
-width: 132px;
-height: 42px;
-`;
 export default Navbar;
+// Error: The top-level-await experiment is not enabled (set experiments.topLevelAwait: true to enabled it)
