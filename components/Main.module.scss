@@ -1,0 +1,93 @@
+.main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85vw;
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.exchange_form {
+  height: 70vh;
+  width: max-content;
+  //   border: black 2px solid;
+
+  ::placeholder {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    color: #3b0540;
+  }
+  ::-webkit-input-placeholder {
+    /* Edge */
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    color: #3b0540;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    color: #3b0540;
+  }
+  .input_field_div {
+    width: 540px;
+    height: 100px;
+    border: 1px solid #3c0a14;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #3b0540;
+  margin-top: -10px;
+    .dropdown_design {
+      width: 20%;
+      height: 100%;
+      left: 547px;
+      top: 350px;
+      background: #3c0a14;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .input_field:placeholder-shown {
+      width: 12%;
+      // border: 0px;
+    }
+    .input_field {
+      transition: all ease-in 0.5s;
+      width: 30%;
+      border: 0px;
+      margin-right: 5px;
+      font-weight: 700;
+      font-size: 45px;
+      line-height: 68px;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  .form_label {
+    display: block;
+    width: 592px;
+    height: 59px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 29px;
+    line-height: 44px;
+    color: #3c0a14;
+    margin: 10px 0px;
+  }
+  .connector {
+    margin-left: 14px;
+    height: max-content;
+  }
+}

@@ -1,9 +1,12 @@
-import React from 'react'
+import ExchangeForm from "../components/ExchangeForm";
+import { Sidebar } from "../components/Sidebar";
 
-function exchange() {
+function exchanges() {
   return (
-    <div>exchange page</div>
-  )
+    <div>
+      <ExchangeForm />
+    </div>
+  );
 }
 
-export default exchange
+export default exchanges;

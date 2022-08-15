@@ -1,9 +1,15 @@
-import React from 'react'
+import { Sidebar } from "../components/Sidebar";
 
-function accounts() {
+function account() {
   return (
-    <div>accounts  page</div>
-  )
+    <div>
+      {" "}
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam qui porro
+      magnam rem exercitationem nemo. Autem incidunt obcaecati exercitationem
+      vero impedit ex officia ducimus cumque omnis corporis. Voluptates, quo
+      dolor?{" "}
+    </div>
+  );
 }
 
-export default accounts
+export default account;
