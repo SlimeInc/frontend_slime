@@ -1,64 +1,38 @@
-import Link from "next/link";
-import styles from './Navbar.module.scss'
-import detectEthereumProvider from '@metamask/detect-provider'
-
-
+import styles from "./Navbar.module.scss";
+import detectEthereumProvider from "@metamask/detect-provider";
+import NavbarItem from "./NavbarItem";
 
 function Navbar() {
-
-  const HandleLogin = async ()=>{
-    const provider = await detectEthereumProvider({mustBeMetaMask:true})
+  const HandleLogin = async () => {
+    const provider = await detectEthereumProvider({ mustBeMetaMask: true });
 
     if (provider) {
-    
-      console.log('Ethereum successfully detected!')
+      console.log("Ethereum successfully detected!");
       // From now on, this should always be true:
       // provider === window.ethereum
-    
+
       // Access the decentralized web!
-    
+
       // Legacy providers may only have ethereum.sendAsync
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
       const account = accounts[0];
     } else {
-    
       // if the provider is not detected, detectEthereumProvider resolves to null
-      alert('Please install MetaMask!')
+      alert("Please install MetaMask!");
     }
-  }
+  };
   return (
     <div className={styles.Navigation}>
-      <div>
-        <Link href="/">
-          <a> DigiCrypt </a>
-        </Link>
-      </div>
+      <NavbarItem href="/">DigiCrypto</NavbarItem>
       <ul>
-        <li>
-          <Link href="/dashboard">
-            <a> Markets </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/tutorials">
-            <a> Tutorials </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/exchanges">
-            <a> Exchanges </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/account">
-            <a> Account </a>
-          </Link>
-        </li>
-        <li>
-          <button className={styles.NavButton} onClick={()=>HandleLogin()}> SignUp </button>
-        </li>
+        <NavbarItem href="/account">Account</NavbarItem>
+        <NavbarItem href="/exchanges">Exchanges</NavbarItem>
+        <NavbarItem href="/transactions">Transactions</NavbarItem>
+        <NavbarItem href="Account/">Tutorials</NavbarItem>
       </ul>
-    </div >
+    </div>
   );
 }
 export default Navbar;
