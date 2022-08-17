@@ -1,13 +1,14 @@
-import BitcoinAmico from "../public/images/Bitcoin-amico 1.png";
-import VecAmico from "../public/images/VecAmico.png";
-import Image from "next/image";
+import React from 'react';
+import Article from '../components/Article';
+import Section from '../components/Section';
+import rafiki from "../public/images/rafiki.png";
+import Image from 'next/image';
 import styles from "../styles/Home.module.scss";
 import Navbar from "../components/Navbar";
 import Article from "../components/Article";
 import Section from "../components/Section";
-import newcurve from '../components/newcurve'
 
-function Home() {
+const Home = () => {
   return (
     <div className={styles.LandingPage}>
       <Section>
@@ -26,7 +27,7 @@ function Home() {
               Let's get Started
             </button>
           </Article>
-          <newcurve />{" "}
+          <Image src={BitcoinAmico} />
         </>
       </Section>
       <Section>
@@ -94,7 +95,7 @@ function Home() {
         </Article>
       </Section>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
