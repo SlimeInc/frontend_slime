@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.scss";
 import Navbar from "../components/Navbar";
 import Article from "../components/Article";
 import Section from "../components/Section";
+import newcurve from '../components/newcurve'
 
 function Home() {
   return (
@@ -25,7 +26,7 @@ function Home() {
               Let's get Started
             </button>
           </Article>
-          <Image src={BitcoinAmico} />
+          <newcurve />{" "}
         </>
       </Section>
       <Section>

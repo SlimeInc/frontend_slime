@@ -1,13 +1,10 @@
 import { Sidebar } from "../components/Sidebar";
+import newcurve from "../components/newcurve";
 
 function account() {
   return (
     <div>
-      {" "}
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam qui porro
-      magnam rem exercitationem nemo. Autem incidunt obcaecati exercitationem
-      vero impedit ex officia ducimus cumque omnis corporis. Voluptates, quo
-      dolor?{" "}
+      <newcurve />{" "}
     </div>
   );
 }

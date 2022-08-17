@@ -1,6 +1,6 @@
 .Navigation {
-  position:sticky;
-  top:0;
+  position: sticky;
+  top: 0;
   left: 0;
   font-weight: 700;
   z-index: 87;
@@ -11,7 +11,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: transparent;
+  /* landing page gradient */
+  background: linear-gradient(
+    164.84deg,
+    #676d9f 10.66%,
+    #681318 50.5%,
+    #100111 86.8%
+  );
   ul {
     list-style-type: none;
     display: flex;

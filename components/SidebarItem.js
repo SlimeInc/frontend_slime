@@ -11,7 +11,7 @@ const SidebarItem = ({ href, children }) => {
           router.pathname == href
             ? styles.sidebar_item_active
             : styles.sidebar_item
-        }
+        }  
       >
         {children}
       </a>

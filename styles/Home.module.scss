@@ -18,7 +18,8 @@
   justify-content: space-between;
   align-items: center;
 }
-.Message , .Tristand {
+.Message,
+.Tristand {
   align-self: flex-end;
   padding: 100px 20px;
   color: white;
@@ -56,7 +57,7 @@
     padding: 10px;
   }
 }
-.Tristand{
+.Tristand {
   padding: 0px 20px;
   align-self: center;
 }
@@ -78,3 +79,7 @@
 // line-height: 32px;
 //   height: 864.65px;
 // }
+.newpage {
+  background-image: url("../public/images/Vector\ 2.svg");
+  height: 100vh;
+}
