@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import styles from './Main.module.scss'
+import styling from '../styles/Home.module.scss'
 import Footer from "./Footer";
 import { Sidebar } from "./Sidebar";
 import { useRouter } from "next/router";
@@ -10,8 +11,8 @@ export default function Layout({ children }) {
     <>
       {router.pathname == home && <Navbar />}
       {router.pathname != home && <Sidebar />}
-      <main className={router.pathname != home && styles.main}>{children}</main>
-      <Footer />
+      <main className={router.pathname != home? styles.main:styling.LandingPage}>{children}</main>
+      {/* <Footer /> */}
     </>
   );
 }
