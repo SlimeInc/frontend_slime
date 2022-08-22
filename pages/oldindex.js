@@ -58,39 +58,39 @@
 //       </Section>
 //       <Section className={styles.Fsection}>
 //         {" "}
-//         <Article>
-//           {" "}
-//           <h2>
-//             One wallet for all your needs
-//             <span>Create your account to buy, exchange and earn interest.</span>
-//           </h2>
-//           <h2>
-//             Top Up Supported Assets
-//             <span>Deposit crypto or fiat to your DigiCrypto account.</span>
-//           </h2>
-//         </Article>
-//         <Article>
-//           {" "}
-//           <h2>
-//             One wallet for all your needs
-//             <span>Create your account to buy, exchange and earn interest.</span>
-//           </h2>
-//           <h2>
-//             Top Up Supported Assets
-//             <span>Deposit crypto or fiat to your DigiCrypto account.</span>
-//           </h2>
-//         </Article>
-//         <Article>
-//           {" "}
-//           <h2>
-//             One wallet for all your needs
-//             <span>Create your account to buy, exchange and earn interest.</span>
-//           </h2>
-//           <h2>
-//             Top Up Supported Assets
-//             <span>Deposit crypto or fiat to your DigiCrypto account.</span>
-//           </h2>
-//         </Article>
+        // <Article>
+        //   {" "}
+        //   <h2>
+        //     One wallet for all your needs
+        //     <span>Create your account to buy, exchange and earn interest.</span>
+        //   </h2>
+        //   <h2>
+        //     Top Up Supported Assets
+        //     <span>Deposit crypto or fiat to your DigiCrypto account.</span>
+        //   </h2>
+        // </Article>
+        // <Article>
+        //   {" "}
+        //   <h2>
+        //     One wallet for all your needs
+        //     <span>Create your account to buy, exchange and earn interest.</span>
+        //   </h2>
+        //   <h2>
+        //     Top Up Supported Assets
+        //     <span>Deposit crypto or fiat to your DigiCrypto account.</span>
+        //   </h2>
+        // </Article>
+        // <Article>
+        //   {" "}
+        //   <h2>
+        //     One wallet for all your needs
+        //     <span>Create your account to buy, exchange and earn interest.</span>
+        //   </h2>
+        //   <h2>
+        //     Top Up Supported Assets
+        //     <span>Deposit crypto or fiat to your DigiCrypto account.</span>
+        //   </h2>
+        // </Article>
 //       </Section>
 //     </div>
 //   );
