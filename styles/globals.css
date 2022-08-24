@@ -3,17 +3,36 @@ body {
   padding: 0;
   margin: 0;
   font-family: Poppins;
+  background-color: #fff;
+}
+h1 {
+  font-weight: 600;
+  font-size:54px;
+  line-height: 16px;
 }
 
+h2 {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 51px;
+  color: #5a1017;
+}
+ul,
+li {
+  list-style-type: none;
+}
 a {
   color: inherit;
+  text-decoration: none;
+}
+li::marker {
+  display: none;
   text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
 }
-
 
 @media (prefers-color-scheme: dark) {
   html {

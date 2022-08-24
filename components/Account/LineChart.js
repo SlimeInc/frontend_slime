@@ -64,7 +64,9 @@ export const data = {
   ],
 };
 
-export function LineChart() {
+export function LineChart({cryptoList}) {
+  console.log(cryptoList)
+
   return (
     <div>
       <Line options={options} data={data} className={styles.chart} />;
