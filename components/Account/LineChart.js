@@ -64,18 +64,18 @@ export const data = {
   ],
 };
 
-<<<<<<< HEAD
-export function LineChart() {
-=======
-export function LineChart({cryptoList}) {
-  console.log(cryptoList)
+// <<<<<<< HEAD
+// export function LineChart() {
+// =======
+// export function LineChart({cryptoList}) {
+//   console.log(cryptoList)
 
->>>>>>> ffb709144e628d5abc364dca7398248898534239
-  return (
-    <div>
-      <Line options={options} data={data} className={styles.chart} />;
-    </div>
-  );
-}
+// >>>>>>> ffb709144e628d5abc364dca7398248898534239
+//   return (
+//     <div>
+//       <Line options={options} data={data} className={styles.chart} />;
+//     </div>
+//   );
+// }
 
 export default LineChart;

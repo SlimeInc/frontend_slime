@@ -29,23 +29,23 @@ const ExchangeForm = () => {
   const HandleSubmit = (e) => {
     e.preventDefault();
   };
-  // const formik = useFormik({
-  //   initialValues: {
-  //     amount: 0,
-  //     address: "",
-  //     message: "",
-  //   },
-  //   validationSchema: Yup.object({
-  //     Select_asset: Yup.string().required("Required"),
-  //     amount: Yup.number()
-  //       .max(20, "Not enough funds in your wallet")
-  //       .required("Required"),
-  //     address: Yup.string().required("Required"),
-  //   }),
-  //   onSubmit: (values) => {
-  //     alert(JSON.stringify(values, null, 2));
-  //   },
-  // });
+  const formik = useFormik({
+    initialValues: {
+      amount: 0,
+      address: "",
+      message: "",
+    },
+    validationSchema: Yup.object({
+      Select_asset: Yup.string().required("Required"),
+      amount: Yup.number()
+        .max(20, "Not enough funds in your wallet")
+        .required("Required"),
+      address: Yup.string().required("Required"),
+    }),
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
   return (
     <form className={styles.exchange_form} onSubmit={HandleSubmit}>
       <label htmlFor="Select_asset" className={styles.form_label}>

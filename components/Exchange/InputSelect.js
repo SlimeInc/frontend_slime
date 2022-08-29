@@ -1,11 +1,8 @@
 import styles from "../Main.module.scss";
 import { useField } from "formik";
-const InputSelect = ({
-...props
-}) => {
-  const HandleChange = (e,{name}) => {
+const InputSelect = ({ ...props }) => {
+  const HandleChange = (e, { name }) => {
     showField({ ...field, name: e.target.value });
-
   };
   const [field, meta] = useField(props);
 
@@ -17,15 +14,10 @@ const InputSelect = ({
     <div className={!disabled ? styles.input_field_div : styles.input_disabled}>
       <div className={styles.input_field}>
         <span>{placeholder}</span>
-        <input
-          type={type}
-          id={id}
-          name={name}
-          disabled={!disabled}
-          value={value}
-          onChange={HandleChange}
-          required={required}
-        />{" "}
+        <input {...field} {...props} />{" "}
+        {meta.touched && meta.error ? (
+          <div className="error">{meta.error}</div>
+        ) : null}
       </div>
     </div>
   );
