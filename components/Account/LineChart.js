@@ -37,45 +37,14 @@ export const options = {
 
 const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "Ethereum",
-      data: labels.map(() => Math.random()),
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-      fill: false,
-    },
-    {
-      label: "USDT",
-      data: labels.map(() => Math.random()),
-      borderColor: "rgb(53, 162, 235)",
-      backgroundColor: "rgba(53, 162, 235, 0.5)",
-      fill: false,
-    },
-    {
-      label: "Solana",
-      data: labels.map(() => Math.random()),
-      borderColor: "rgb(53, 50, 0, 0.5)",
-      backgroundColor: "rgba(53, 50, 0, 0.5)",
-      fill: false,
-    },
-  ],
-};
+export function LineChart() {
+  console.log(cryptoList)
 
-// <<<<<<< HEAD
-// export function LineChart() {
-// =======
-// export function LineChart({cryptoList}) {
-//   console.log(cryptoList)
-
-// >>>>>>> ffb709144e628d5abc364dca7398248898534239
-//   return (
-//     <div>
-//       <Line options={options} data={data} className={styles.chart} />;
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <Line options={options} data={data} className={styles.chart} />;
+    </div>
+  );
+}
 
 export default LineChart;

@@ -1,16 +1,20 @@
-import { Field } from "formik";
 import React from "react";
-import styles from "../Main.module.scss";
-const DropDownItem = ({ children, setDropdown, setAsset ,showField,field}) => {
+import styles from "./Exchange.module.scss";
+
+const DropDownItem = ({
+  children,
+  setdropdown,
+  showField,
+  field,
+}) => {
   const Handleclick = () => {
-    // console.log(`sjhfksj;fjlsd`, children.toString().slice(0,-2));
-    // setAsset(children.toString().slice(0,-2));
-    showField({...field,amount:0.1,asset:children.toString().slice(0,-2)});
-    setDropdown(false);
+    const value = children.toString().slice(0, -2);
+    showField((field) => ({ ...field, asset: value }));
+    setdropdown(false);
   };
 
   return (
-    <div className={styles.dropdown_item} onClick={Handleclick} >
+    <div className={styles.dropdown_content_item} onClick={Handleclick}>
       {children}
     </div>
   );

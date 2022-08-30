@@ -1,4 +1,4 @@
-import styles from "../Main.module.scss";
+import styles from "./Exchange.module.scss";
 import { motion } from "framer-motion";
 
 const Connector = () => {

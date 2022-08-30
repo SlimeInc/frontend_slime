@@ -1,23 +1,20 @@
-import styles from "../Main.module.scss";
-import { useField } from "formik";
-const InputSelect = ({ ...props }) => {
-  const HandleChange = (e, { name }) => {
-    showField({ ...field, name: e.target.value });
-  };
-  const [field, meta] = useField(props);
+import styles from "./Exchange.module.scss";
 
-  return button ? (
-    <button type="submit" className={!disabled ? styles.button_disabled : null}>
-      send
-    </button>
-  ) : (
-    <div className={!disabled ? styles.input_field_div : styles.input_disabled}>
+
+/////////////////////////
+const InputSelect = (props) => {
+  const HandleChange = (e) => {
+    const name =e.target.name
+    props.showField({ ...props.field, [name]: e.target.value });
+  };
+
+
+  return (
+    <div className={!props.disabled ? styles.input_field_div : styles.input_disabled}>
+      <div className={styles.dropdown_design}/>
       <div className={styles.input_field}>
-        <span>{placeholder}</span>
-        <input {...field} {...props} />{" "}
-        {meta.touched && meta.error ? (
-          <div className="error">{meta.error}</div>
-        ) : null}
+        <div>{props.placeholder}</div>
+        <input {...props}  disabled={props.disabled}onChange={HandleChange}  />{" "}
       </div>
     </div>
   );

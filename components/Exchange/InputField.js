@@ -1,63 +1,30 @@
-import styles from "../Main.module.scss";
+import styles from "./Exchange.module.scss";
 import { MdOutlineArrowDropDown } from "react-icons/md";
-import { useField } from "formik";
-import { useCallback } from "react";
-import { fa } from "faker/lib/locales";
-const InputField = ({
-  type,
-  placeholder,
-  name,
-  id,
-  Isdropdown = false,
-  setDropdown,
-  value,
-  showField,
-  disabled,
-  button = false,
-  required = true,
-  field,
-}) => {
-  const HandleAsset = (e) => {
-    showField({ ...field, asset: e.target.value });
-  };
+// import { useCallback } from "react";
+const InputField = (props) => {
   const HandleChange = (e) => {
-    e.preventDefault();
-    let id = e.target.name;
-    showField({ ...field, id: e.target.value });
+    // e.preventDefault();
+    const value = e.target.value;
+    props.showField((field) => ({ ...field, asset: value }));
+    console.log(props.field.asset);
   };
-  return button ? (
-    <button type="submit" className={!disabled ? styles.button_disabled : null}>
-      send
-    </button>
-  ) : (
-    <div className={!disabled ? styles.input_field_div : styles.input_disabled}>
+  return (
+    <div className={styles.input_field_div}>
       <div className={styles.dropdown_design}>
-        {Isdropdown && (
-          <MdOutlineArrowDropDown
-            color="white"
-            size="2em"
-            onClick={() => setDropdown(true)}
-          />
-        )}
+        <MdOutlineArrowDropDown
+          color="white"
+          size="2em"
+          onClick={() => props.setdropdown(!props.dropdown)}
+        />
       </div>
 
       <div className={styles.input_field}>
-        <span>{placeholder}</span>
+        <div>{props.placeholder}</div>
         <input
-          type={type}
-          id={id}
-          name={name}
-          disabled={!disabled}
-          value={value}
-          onChange={
-            Isdropdown
-              ? HandleAsset
-              : (e) => {
-                HandleChange(e)
-         }
-                }
-          
-          required={required}
+          {...props}
+          placeholder=""
+          required
+          onChange={HandleChange}
         />{" "}
       </div>
     </div>

@@ -22,6 +22,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
     "styled-components": "^5.3.5",
+    "swiper": "^8.3.2",
     "type.js": "^0.0.1",
     "typed.js": "^2.0.12"
   },

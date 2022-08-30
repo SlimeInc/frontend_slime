@@ -1,4 +1,4 @@
-import ExchangeForm from "../components/ExchangeForm";
+import ExchangeForm from "../components/Exchange/ExchangeForm";
 import { Sidebar } from "../components/Sidebar";
 
 function exchanges() {
