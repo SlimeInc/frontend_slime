@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.scss";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef , useEffect} from "react";
 const Section = ({ children }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, {amount:0.2})

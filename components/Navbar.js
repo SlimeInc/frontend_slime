@@ -41,10 +41,10 @@ function Navbar() {
       <NavbarItem href="/">DigiCrypto</NavbarItem>
       <ul>
         <NavbarItem href="/">Markets</NavbarItem>
+        <NavbarItem href="#about-section">About</NavbarItem>
         <li className={styles.NavButton} onClick={HandleLogin}>
           Login With MetaMask
         </li>
-        <NavbarItem href="#about-section">About</NavbarItem>
       </ul>
     </div>
   );

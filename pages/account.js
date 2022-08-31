@@ -4,13 +4,14 @@ import AccountRow from "../components/Account/AccountRow";
 import { useState, useEffect } from "react";
 import LineChart from "../components/Account/LineChart";
 import { DisplayCryptos } from "../components/Account/DisplayCryptos";
+import styles from "../components/Account/Account.module.scss";
 
 const wallet = {
   ETH: { amt: "27" },
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };
-let cryptos;
+let cryptos , coinGrid;
 
 function account() {
   const [cryptoList, setcryptoList] = useState([]);
@@ -35,7 +36,6 @@ function account() {
         cryptos.filter(function (crypto) {
           if (wallet.hasOwnProperty(crypto.symbol)) {
             setcryptoList((arr) => [...arr, crypto]);
-            console.log(crypto.symbol);
           }
         });
       });
@@ -43,7 +43,7 @@ function account() {
 
   return (
     <>
-      <h1>Your Assets</h1>
+      <h1 className={styles.your_asset}>Assets</h1>
       <AccountHead />
       <>
         {cryptoList.map((crypto) => (
@@ -57,7 +57,9 @@ function account() {
       <>
         <LineChart cryptoList={cryptoList} />
       </>
-      <>{/* <DisplayCryptos cryptoList={cryptoList} /> */}</>
+      <>
+      <DisplayCryptos cryptos={cryptos} />
+      </>
     </>
   );
 }

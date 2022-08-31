@@ -1,13 +1,4 @@
-import styles from "../styles/Home.module.scss";
-import { motion } from "framer-motion";
-
-const MiddleSection = () => {
-  const transition = { duration: 4, yoyo: Infinity, ease: "easeInOut" };
-
-  return (
-    <div className={styles.middleSection_photo}>
-      {" "}
-      <svg width="644" height="670" viewBox="0 0 644 670" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="644" height="670" viewBox="0 0 644 670" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_226_584)">
 <path d="M322 662C497.627 662 640 573.766 640 464.924C640 356.082 497.627 267.848 322 267.848C146.373 267.848 4 356.082 4 464.924C4 573.766 146.373 662 322 662Z" fill="#F0F0F0"/>
 <path d="M80.5003 535.102L25.649 501.187C22.5582 499.26 22.5582 496.159 25.649 494.247L344.715 296.446C346.45 295.496 348.369 295.001 350.316 295.001C352.264 295.001 354.183 295.496 355.918 296.446L410.769 330.435C413.86 332.347 413.86 335.462 410.769 337.374L91.7027 535.102C89.9664 536.046 88.0476 536.537 86.1015 536.537C84.1555 536.537 82.2367 536.046 80.5003 535.102V535.102Z" fill="#E0E0E0"/>
@@ -183,9 +174,3 @@ const MiddleSection = () => {
 </filter>
 </defs>
 </svg>
-
-    </div>
-  );
-};
-
-export default MiddleSection;

@@ -1,13 +1,13 @@
 import React from "react";
 
-const AccountCard = (coin) => {
+const AccountCard = ({name,price,MarketCap,change,ranking}) => {
   return (
     <div>
-      <h3>{`${coin.ranking} ${coin.name}`}</h3>
+      <h3>{name}</h3>
       <div>
-        {`price: ${coin.price}`}
-        {`Market cap : ${coin.MarketCap}`}
-        {`daily price change : ${coin.change}`}
+         <span>{price}</span>
+        {/* {`Market cap : ${coin.MarketCap}`}
+        {`daily price change : ${coin.change}`} */}
       </div>
     </div>
   );

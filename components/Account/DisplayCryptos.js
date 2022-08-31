@@ -1,14 +1,14 @@
 import Section from "../Section";
 import AccountCard from "./AccountCard";
 
-export const DisplayCryptos = ({ cryptoList }) => {
+export const DisplayCryptos = ({ cryptos }) => {
+  console.log(cryptos)
   return (
     <Section>
       <div>
-        {" "}
-        {cryptoList.map((coin) => (
-          <AccountCard coin={coin} />
-        ))}
+        {/* {cryptos?.map((coin) => (
+          <AccountCard coin={coin} key={coin.name}/>
+        ))} */}
       </div>
     </Section>
   );

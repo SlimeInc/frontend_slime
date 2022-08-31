@@ -11,6 +11,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import {useState} from 'react'
 
 ChartJS.register(
   CategoryScale,
@@ -29,20 +30,37 @@ export const options = {
       position: "top",
     },
     title: {
-      display: true,
+      display: false,
       text: "Watch how your coins are evolving throughout the year ",
     },
   },
 };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
-
-export function LineChart() {
-  console.log(cryptoList)
-
+let labels = [];
+let priceTags = []
+let timePoint= new Date().getHours().toLocaleString()
+export function LineChart({cryptoList}) {
+  const [whichCoin, setwhichCoin] = useState(2)
+  for (let index = 0; index < cryptoList[whichCoin]?.sparkline.length; index++) {
+    priceTags.push(cryptoList[whichCoin]?.sparkline[index])
+    labels.push(Math.abs((timePoint-(24+index))%24))
+  }
+const data = {
+  labels:labels,
+  datasets:[
+    {
+      label:`${cryptoList[whichCoin]?.name} price in USD`,
+      data: priceTags,
+      backgroundColor:cryptoList[whichCoin]?.color,
+      borderColor:cryptoList[whichCoin]?.color
+    }
+  ]
+}
+  console.log(priceTags , labels)
   return (
     <div>
-      <Line options={options} data={data} className={styles.chart} />;
+      <Line className={styles.chart} data={data}  />;
+      <Line className={styles.chart} data={data}  />;
     </div>
   );
 }
