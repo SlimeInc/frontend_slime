@@ -11,7 +11,7 @@ import { mediaByIndex } from "../../public/images";
 // const SLIDE_COUNT = 20;
 // const slides = Array.from(Array(SLIDE_COUNT).keys());
 const Carousel = ({ data }) => {
-  const slides = data.data.coins;
+  const slides = data?.data?.coins;
   console.log(slides);
   // Now you can use Swiper
   // const swiper = new Swiper(".swiper", {
@@ -32,7 +32,7 @@ const Carousel = ({ data }) => {
       onSlideChange={() => console.log("slide change")}
       className={styles.swipe}
     >
-      {slides.map((slide) => (
+      {slides?.map((slide) => (
         <SwiperSlide className={styles.slide} key={slide.symbol}>
           <img src={slide.iconUrl}  />
         </SwiperSlide>

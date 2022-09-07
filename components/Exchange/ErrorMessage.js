@@ -10,6 +10,7 @@ const ErrorMessage = ({id ,...props}) => {
         case 'amount': message = `invalid amount ${props.value}`;
         break;
         default:
+          
             message=`invalid`
     }
   return (

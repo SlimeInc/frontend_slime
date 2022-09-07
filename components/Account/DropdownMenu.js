@@ -1,4 +1,4 @@
-import styles from "./Exchange.module.scss";
+import styles from "./Account.module.scss";
 import DropDownItem from "./DropDownItem";
 
 const wallet = {
@@ -6,7 +6,7 @@ const wallet = {
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };
-const DropdownMenu = ({  dropdown, setdropdown ,showField ,field,setWhichCoin, whichCoin}) => {
+const DropdownMenu = ({  dropdown, setdropdown ,setWhichCoin, whichCoin}) => {
   console.log(dropdown, Object.keys(wallet));
   return (
     dropdown && (
@@ -15,9 +15,8 @@ const DropdownMenu = ({  dropdown, setdropdown ,showField ,field,setWhichCoin, w
           <DropDownItem
             key={asset.toString()}
             setdropdown={setdropdown}
-            showField={showField}
-            field={field}
-
+            setWhichCoin={setWhichCoin}
+            whichCoin={Object.keys(wallet).indexOf(asset)}
           >
             {asset}{" "}
           </DropDownItem>
