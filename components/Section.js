@@ -1,4 +1,5 @@
 import styles from "../styles/Home.module.scss";
+import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef , useEffect} from "react";
 const Section = ({ children }) => {
@@ -8,7 +9,7 @@ const Section = ({ children }) => {
   useEffect(() => {
     console.log("Element is in view: ", isInView)
   }, [isInView])
-  return <div ref={ref} >{children}</div>;
+  return <motion.div ref={ref} className={styles.section}  >{children}</motion.div>;
 };
 
 export default Section;

@@ -1,8 +1,16 @@
+.main {
+  height: inherit;
+  width: 100%;
+  padding: 4%;
+  background-color: inherit;
+}
 .your_asset {
   color: #000;
+  padding-left: 20%;
 }
 
-.assets_head {
+.assets_head,
+.assets_row {
   font-size: 1rem;
   color: #737373;
   font-weight: 500;
@@ -12,14 +20,13 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  box-shadow: 0px 1px 3px rgb(240, 236, 236);
+  box-shadow: 0px 1px 0px rgb(240, 236, 236);
   &.asset_item {
     line-height: 1.8;
   }
   div {
     min-width: 15%;
     min-height: 50px;
-    margin-left: 3px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -28,8 +35,184 @@
     }
   }
 }
+.assets_row {
+  border: none;
+  box-shadow: none;
+}
+.assets_card {
+  padding: 2%;
+  margin: 2%;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px rgb(240, 236, 236);
+}
 .chart {
-  min-width: 70vw;
-  padding: 5% 5px;
-  min-height: 80vh;
+  min-width: 69%;
+  padding: 2%;
+  height: 700px;
+  background-color: #fff;
+  box-shadow: 1px 1px 3px rgb(240, 236, 236);
+  transition: all ease-in 3s;
+}
+.chart_active {
+  @extend .chart;
+  min-width: 70%;
+  transition: all ease-in 5s;
+}
+.chart_section {
+  display: flex;
+  justify-content: space-evenly;
+}
+.chart_stats {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  width: 25%;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 15px;
+}
+.stats_card {
+  height: 25%;
+  width: 70%;
+  min-width: 350px;
+  padding: 1.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid #dddada;
+  box-shadow: inset 0px 0px 2px rgb(231, 223, 223);
+
+  h4 {
+    color: #817f7f;
+    font-weight: 300;
+  }
+  h2 {
+    color: #70131b;
+    height: 40%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+.title {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle_coin {
+  border-radius: 20px;
+  color: #817f7f;
+  width: fit-content;
+  padding: 5px 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #70131b;
+    color: #fff;
+    transition: all ease 0.5s;
+  }
+}
+.display_cryptos {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.crypto_card {
+  overflow: hidden;
+  width: 20%;
+  min-width: 220px;
+  height: 250px;
+  margin: 1%;
+  padding: 5px 10px;
+  box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  .face {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    img {
+      height: 70%;
+      width: 50%;
+    }
+  }
+  .back {
+    height: 0;
+    opacity: 0;
+
+    // display: none;
+  }
+
+  span {
+    padding: 2%;
+    line-height: 2;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    display: block;
+  }
+  &:hover {
+    .face {
+      height: 15%;
+      padding: 0 2%;
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: #fff 1px solid;
+      transition: all 0.5s ease-in;
+      img {
+        height: 90%;
+        width: 10%;
+      }
+    }
+    .back {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 80%;
+      opacity: 1;
+      transition: all 0.5s ease-in;
+    }
+  }
+}
+.before_assets {
+  display: flex;
+  justify-content: center;
+}
+.section {
+  h2 {
+    padding-left: 30%;
+  }
+}
+.dropdown_content {
+  position: absolute;
+  right: -5%;
+  top: -5%;
+  box-shadow: 0px 10px 20px 0px #88919d4d;
+  border: 1px solid #e6eaed;
+  border-radius: 4px;
+  color: #000;
+  background: #ffffff;
+  overflow: hidden;
+  width: 20%;
+  z-index: 10000;
+  // transition: 200ms ease;
+  &_item {
+    margin: 0;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 18px;
+    color: #444444;
+    transition: 200ms ease;
+    &_active {
+      background: #f5f8fa;
+    }
+    &:hover {
+      background: #f5f8fa90;
+    }
+  }
 }

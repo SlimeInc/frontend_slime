@@ -1,17 +1,16 @@
 import React from "react";
-import styles from "./Exchange.module.scss";
+import styles from "./Account.module.scss";
 
 const DropDownItem = ({
   children,
   setdropdown,
-  showField,
-  field,
-
+  whichCoin,
+  setWhichCoin
 }) => {
   const Handleclick = () => {
-    const value = children.toString().slice(0, -2);
-    showField((field) => ({ ...field, asset: value }));
     setdropdown(false);
+    setWhichCoin(whichCoin)
+    console.log(whichCoin)
   };
 
   return (

@@ -3,11 +3,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: Poppins;
-  background-color: #fff;
+  background-color: #f8fafb;
 }
 h1 {
   font-weight: 600;
-  font-size:54px;
+  font-size: 54px;
   line-height: 16px;
 }
 
