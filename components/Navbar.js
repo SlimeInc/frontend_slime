@@ -38,7 +38,7 @@ function Navbar() {
   return (
     <div className={styles.Navigation}>
       {console.log(scroll, "lasklj")}
-      <NavbarItem href="/">DigiCrypto</NavbarItem>
+      <NavbarItem href="/" className={styles.Logo}>DigiCrypto</NavbarItem>
       <ul>
         <NavbarItem href="/">Markets</NavbarItem>
         <NavbarItem href="#about-section">About</NavbarItem>
