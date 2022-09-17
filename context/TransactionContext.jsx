@@ -22,8 +22,8 @@ const getEthContract = () => {
 
 export const TransactionProvider = ({ children }) => {
     return (
-        <TransactionContext.Provider>
-
+        <TransactionContext.Provider value = {{}}>
+            { children }
         </TransactionContext.Provider>
     )
 }
