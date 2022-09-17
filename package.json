@@ -13,6 +13,7 @@
     "@reduxjs/toolkit": "^1.8.4",
     "axios": "^0.27.2",
     "chart.js": "^3.9.1",
+    "ethers": "^5.7.1",
     "faker": "^5.5.3",
     "framer-motion": "^7.2.0",
     "millify": "^5.0.0",
