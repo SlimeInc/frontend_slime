@@ -21,7 +21,7 @@ const getEthContract = () => {
 }
 
 export const TransactionProvider = ({ children }) => {
-    const [connectedAccount, setConnectedAccount] = useState(initialState)
+    const [currentAccount, setCurrentAccount] = useState(initialState)
 
     const checkForWalletConnection = async () => {
         try {
