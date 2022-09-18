@@ -22,7 +22,7 @@ const getEthContract = () => {
 
 export const TransactionProvider = ({ children }) => {
     return (
-        <TransactionContext.Provider value = {{}}>
+        <TransactionContext.Provider value = {{ value: 'test' }}>
             { children }
         </TransactionContext.Provider>
     )
