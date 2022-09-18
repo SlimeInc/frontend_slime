@@ -8,7 +8,7 @@ const TestContractData = () => {
     
     const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction } = useContext(TransactionContext)
     
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
        const { addressTo, amount, keyword, message } = formData
        
        e.preventDefault() //prevent auto-refresh after submission
