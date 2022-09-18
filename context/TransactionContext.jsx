@@ -103,6 +103,10 @@ export const TransactionProvider = ({ children }) => {
 
             const transactionCount = transactionContract.getTransactionCount()
 
+        } catch (error) {
+            console.log(error)
+            throw new Error("No ethereum object")
+        }
     }
 
     //this runs only at the start of the program
