@@ -29,7 +29,7 @@ export const TransactionProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false)
     const [transactionCount, setTransactionCount] = useState(0)
 
-    
+
     //dynamically update formData
     const handleChange = (e, name) => {
         setFormData((prevState) => ({ ...prevState, [name]: e.target.value }))
