@@ -65,6 +65,36 @@ export const TransactionProvider = ({ children }) => {
         }
     }
 
+    //Send transactions & store transaction data
+    const sendTransaction = async () => {
+        try {
+            if (!ethereum) return alert("Please install Metamask")
+
+            //retrieve the form data from a page
+            const { addressTo, amount, keyword, message } = formData
+
+            //retrieve data on a transaction
+            const transactionContract = getEthContract()
+
+            //convert input amount to Gwei or Hex
+            const convertedAmount = ethers.utils.parseEther(amount)
+
+            //send transaction
+            await ethereum.request({
+                method: 'eth_sendTransaction',
+                params: [{
+                    from: currentAccount,
+                    to: addressTo,
+                    gas: '0x5208', //21000 Gwei
+                    value: convertedAmount._hex, 
+                }]
+            })
+
+            //store transaction on the blockchain
+            const transactionHash = await transactionContract.addToBlockChain(addressTo, convertedAmount, message, keyword)
+            
+            setIsLoading(true)
+            console.log(`Loading - ${transactionHash.hash}`)
 
     const sendTransaction = async () => {
         
