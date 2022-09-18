@@ -23,6 +23,9 @@ const getEthContract = () => {
 export const TransactionProvider = ({ children }) => {
     const [currentAccount, setCurrentAccount] = useState('')
     const [formData, setFormData] = useState({ addressTo: '', amount: '', keyword: '', message: '' })
+    const [isLoading, setIsLoading] = useState(false)
+    const [transactionCount, setTransactionCount] = useState(0)
+
     
     //dynamically update formData
     const handleChange = (e, name) => {
