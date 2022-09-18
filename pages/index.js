@@ -52,7 +52,7 @@ const Home = ({ cryptos }) => {
               Let's get Started
             </button>
           </Article>
-          <Image src={rafiki} className={styles.image_div} />
+          <img src="images/rafiki.png" className={styles.image_div} />
         </div>
       <Carousel  data={cryptos} />
       </section>

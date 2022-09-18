@@ -4,7 +4,6 @@ import { A11y, Autoplay, EffectFade } from "swiper";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
 import styles from "./Exchange.module.scss";
-import Image from "next/image";
 import { mediaByIndex } from "../../public/images";
 
 ///////////////////////////////////////

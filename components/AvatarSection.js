@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./Sidebar.module.scss";
 
 const AvatarSection = ({ pic, name }) => {
@@ -6,7 +5,7 @@ const AvatarSection = ({ pic, name }) => {
     <div className={styles.avatar_section}>
       <div className={styles.avatar_pic}>
         {" "}
-        <Image src={pic} layout="intrinsic"></Image>
+        <img src={pic} layout="intrinsic"></img>
       </div>
       <span>{name}</span>
     </div>
