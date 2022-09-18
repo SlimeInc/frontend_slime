@@ -35,7 +35,11 @@ export const TransactionProvider = ({ children }) => {
         if (accounts.length) {
             setCurrentAccount(accounts[0])
         }
-        console.log(accounts)
+            console.log(accountsAvailable)
+            
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const connectWallet = async () => {
