@@ -58,6 +58,11 @@ export const TransactionProvider = ({ children }) => {
         }
     }
 
+
+    const sendTransaction = async () => {
+        
+    }
+
     //this runs only at the start of the program
     useEffect(() => {
         checkForWalletConnection()
