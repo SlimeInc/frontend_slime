@@ -96,8 +96,13 @@ export const TransactionProvider = ({ children }) => {
             setIsLoading(true)
             console.log(`Loading - ${transactionHash.hash}`)
 
-    const sendTransaction = async () => {
-        
+            await transactionHash.wait()
+
+            setIsLoading(false)
+            console.log(`Success - ${transactionHash.hash}`)
+
+            const transactionCount = transactionContract.getTransactionCount()
+
     }
 
     //this runs only at the start of the program
