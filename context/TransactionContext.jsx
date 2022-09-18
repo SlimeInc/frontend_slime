@@ -25,6 +25,11 @@ export const TransactionProvider = ({ children }) => {
 
     const checkForWalletConnection = async () => {
         if (!ethereum) return alert("Please install Metamask")
+    
+            const accountsAvailable = await ethereum.request({ method: 'eth_accounts' })
+
+            if (accountsAvailable.length) {
+                setCurrentAccount(accountsAvailable[0])
 
         const accounts = await ethereum.request({ method: 'eth_accounts' })
         if (accounts.length) {
