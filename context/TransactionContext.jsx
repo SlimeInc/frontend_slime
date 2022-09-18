@@ -31,10 +31,11 @@ export const TransactionProvider = ({ children }) => {
             if (accountsAvailable.length) {
                 setCurrentAccount(accountsAvailable[0])
 
-        const accounts = await ethereum.request({ method: 'eth_accounts' })
-        if (accounts.length) {
-            setCurrentAccount(accounts[0])
-        }
+                //getAllTransactions()
+            }else {
+                console.log("No accounts found")
+                throw new Error("No ethereum object")
+            }
             console.log(accountsAvailable)
             
         } catch (error) {
