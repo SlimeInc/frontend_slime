@@ -107,7 +107,8 @@ export const TransactionProvider = ({ children }) => {
             setIsLoading(false)
             console.log(`Success - ${transactionHash.hash}`)
 
-            const transactionCount = transactionContract.getTransactionCount()
+            const transactionCount = await transactionContract.getTransactionCount()
+            setTransactionCount(transactionCount.toNumber())
 
         } catch (error) {
             console.log(error)
