@@ -21,7 +21,14 @@ const getEthContract = () => {
 }
 
 export const TransactionProvider = ({ children }) => {
-    const [currentAccount, setCurrentAccount] = useState(initialState)
+    const [currentAccount, setCurrentAccount] = useState('')
+    const [formData, setFormData] = useState({ addressTo: '', amount: '', keyword: '', message: '' })
+    
+    //dynamically update formData
+    const handleChange = (e, name) => {
+        setFormData((prevState) => ({ ...prevState, [name]: e.target.value }))
+    }
+
 
     const checkForWalletConnection = async () => {
         try {
@@ -69,7 +76,7 @@ export const TransactionProvider = ({ children }) => {
     }, [])
 
     return (
-        <TransactionContext.Provider value = {{ connectWallet, currentAccount }}>
+        <TransactionContext.Provider value = {{ connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction }}>
             { children }
         </TransactionContext.Provider>
     )
