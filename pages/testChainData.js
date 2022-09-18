@@ -22,6 +22,7 @@ const TestContractData = () => {
     console.log(currentAccount)
     return (
         <div>
+            <h2>Test Data Injected From the Smart contract ABI</h2>
 
             {!currentAccount && (
                 <button
