@@ -38,12 +38,9 @@ const Home = ({ cryptos }) => {
   return (
     <div className={styles.LandingPage}>
       <section className={styles.firstSection}>
-        {" "}
-        <div className={styles.div}>
-          {" "}
+      <div className={styles.div}>
           <Article>
             <h1 ref={el} />
-            {/* <h1>Trusted Cryptos</h1> */}
             <motion.p
               initial={{ x: "-100%", opacity: 0 }}
               animate={{ x: "0%", opacity: 1 }}
@@ -52,14 +49,12 @@ const Home = ({ cryptos }) => {
               A simple and intuitive way to crypto
             </motion.p>
             <button className={styles.GetStartedButton}>
-              {" "}
               Let's get Started
             </button>
           </Article>
           <Image src={rafiki} className={styles.image_div} />
         </div>
-        <Carousel className={styles.carousel} data={cryptos} />
-        {/* <Newcurve /> */}
+      <Carousel  data={cryptos} />
       </section>
       <section className={styles.middleSection}>
         <MiddleSection />
@@ -67,7 +62,7 @@ const Home = ({ cryptos }) => {
           className={styles.Message}
           ref={ref}
           style={{
-            transform: IsInview ? "none" : "translateX(200px)",
+            transform: IsInview ? "none" : "translateX(100px)",
             opacity: IsInview ? 1 : 0,
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
@@ -98,7 +93,7 @@ const Home = ({ cryptos }) => {
           className={styles.Message}
           ref={ref2}
           style={{
-            transform: Inview ? "none" : "translateX(200px)",
+            transform: Inview ? "none" : "translateX(100px)",
             opacity: Inview ? 1 : 0,
             transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
           }}
@@ -131,7 +126,6 @@ const Home = ({ cryptos }) => {
 // This gets called on every request
 export async function getServerSideProps() {
   // Fetch data from external API
-
   const res = await fetch(url, {
     method: "GET",
     params: {

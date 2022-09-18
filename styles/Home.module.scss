@@ -69,13 +69,13 @@
   background-image: url("../public/images/firstVector.png");
   width: 100%;
   // box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
-  height: 120vh;
+  min-height: 120vh;
   padding-top: 5%;
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
   .div {
-    max-width: 1170px;
+    // max-width: 1170px;
     margin: auto;
     //padding-left: 10%;
     display: flex;
@@ -87,19 +87,36 @@
     font-size: 60px;
     font-weight: 700;
   }
-
-  // .curve {
-  //   position: absolute;
-  //   bottom: 0.1;
-  //   z-index: 10;
-  //   margin-bottom: 0;
-  //   display: block;
-  //   padding-left: 0px;
-  //   box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
-
-  // }
 }
 
+@media (max-width: 480px) {
+  .firstSection {
+    // display: flex;
+    // flex-direction: column;
+    .div {
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 20px;
+    }
+  }
+  .middleSection {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .metamaskSection {
+    flex-direction: column;
+  }
+  .middleSection_photo {
+    width: 70%;
+    height: 50%;
+    h2 {
+      font-size: 16px;
+      margin-bottom: 30px;
+      font-weight: 500;
+    }
+  }
+}
 .middleSection {
   background-color: white;
   display: flex;
@@ -137,6 +154,7 @@
   box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
   height: 100vh;
   padding-left: 5%;
+  overflow-x: hidden;
   article {
     margin-right: 15%;
   }
@@ -167,7 +185,7 @@
   height: 50vh;
   background-repeat: no-repeat;
   background-image: url("../public/images/Vector\ 5.png");
-  background-size: cover; 
+  background-size: cover;
   // background: linear-gradient(221.66deg, #70131B 59.53%, #4B070D 23.54%);;
   color: #ffffff;
   z-index: 10;

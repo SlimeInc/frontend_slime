@@ -31,7 +31,7 @@ const ChartStats = ({ cryptoList }) => {
           ).toFixed(3)
         }
       </StatsCard>
-      <StatsCard name="change">{(num / denum).toFixed(3) + "%"}</StatsCard>
+      <StatsCard name="change">{((num / denum).toFixed(3) ?? 0) + "%"}</StatsCard>
     </section>
   );
 };
