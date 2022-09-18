@@ -6,8 +6,19 @@ import { TransactionContext } from "../context/TransactionContext";
 
 const TestContractData = () => {
     
-    const { connectWallet, currentAccount } = useContext(TransactionContext)
+    const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction } = useContext(TransactionContext)
     
+    const handleSubmit = () => {
+       const { addressTo, amount, keyword, message } = formData
+       
+       e.preventDefault() //prevent auto-refresh after submission
+
+       if (!addressTo || !amount || !keyword || !message) return;
+
+       sendTransaction()
+    }
+
+
     console.log(currentAccount)
     return (
         <div>
