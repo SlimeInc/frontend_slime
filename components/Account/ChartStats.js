@@ -20,18 +20,22 @@ const ChartStats = ({ cryptoList }) => {
   return (
     <section className={styles.chart_stats}>
       <h3>Wallet Summary</h3>
-      <StatsCard name="value">
+      <div className={styles.chart_cards}>
         {" "}
-        {
-          // wallet * market prices
-          Number(
-            cryptoList?.reduce(function (accumulator, asset) {
-              return accumulator + asset?.price * wallet[asset.symbol].amt;
-            }, 0)
-          ).toFixed(3)
-        }
-      </StatsCard>
-      <StatsCard name="change">{(num / denum).toFixed(3) + "%"}</StatsCard>
+        <StatsCard name="value">
+          {" "}
+          {
+            Number(
+              cryptoList?.reduce(function (accumulator, asset) {
+                return accumulator + asset?.price * wallet[asset.symbol].amt;
+              }, 0)
+            ).toFixed(3)
+          }
+        </StatsCard>
+        <StatsCard name="change">
+          {((num / denum).toFixed(3) ?? 0) + "%"}
+        </StatsCard>
+      </div>
     </section>
   );
 };

@@ -2,10 +2,12 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "lint": "next lint"
   },
   "dependencies": {
@@ -14,9 +16,10 @@
     "axios": "^0.27.2",
     "chart.js": "^3.9.1",
     "faker": "^5.5.3",
+    "formik": "^2.2.9",
     "framer-motion": "^7.2.0",
     "millify": "^5.0.0",
-    "next": "12.2.3",
+    "next": "^12.3.0",
     "react": "18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "18.2.0",
@@ -25,7 +28,8 @@
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2",
     "type.js": "^0.0.1",
-    "typed.js": "^2.0.12"
+    "typed.js": "^2.0.12",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "8.20.0",

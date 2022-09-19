@@ -1,22 +1,24 @@
+import Connector from "./Connector";
 import styles from "./Exchange.module.scss";
-
-
+import { useField , ErrorMessage} from "formik";
 /////////////////////////
 const InputSelect = (props) => {
-  const HandleChange = (e) => {
-    const name =e.target.name
-    props.showField({ ...props.field, [name]: e.target.value });
-  };
-
+  const [field, meta] = useField(props);
 
   return (
-    <div className={ styles.input_field_div }>
-      <div className={styles.dropdown_design}/>
-      <div className={styles.input_field}>
-        <div>{props.placeholder}</div>
-        <input {...props}  disabled={props.disabled} placeholder='' onChange={HandleChange}  />{" "}
+    <>
+      <Connector />
+      <div className={styles.input_field_div}>
+        <div className={styles.dropdown_design} />
+        <div className={styles.input_field}>
+          <div>{props.placeholder}</div>
+          <input {...field} placeholder="" />{" "}
+        </div>
       </div>
-    </div>
+      <div className={styles.error}>
+        <ErrorMessage name={field.name} />
+      </div>
+    </>
   );
 };
 

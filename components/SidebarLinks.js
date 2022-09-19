@@ -1,11 +1,19 @@
 import styles from "./Sidebar.module.scss";
 import SidebarItem from "./SidebarItem";
+import { MdSwitchAccount, MdOutlineHistory } from "react-icons/md";
+import { GiPayMoney } from "react-icons/gi";
 const SidebarLinks = () => {
   return (
     <div className={styles.sidebar_links}>
-      <SidebarItem href="/account">Account</SidebarItem>
-      <SidebarItem href="/exchanges">Exchange</SidebarItem>
-      <SidebarItem href="/transactions">Transactions</SidebarItem>
+      <SidebarItem href="/account">
+        <MdSwitchAccount /> <span>Account</span>
+      </SidebarItem>
+      <SidebarItem href="/exchanges">
+        <GiPayMoney /> <span> Exchange</span>
+      </SidebarItem>
+      <SidebarItem href="/transactions">
+        <MdOutlineHistory/> <span>History</span>
+      </SidebarItem>
     </div>
   );
 };

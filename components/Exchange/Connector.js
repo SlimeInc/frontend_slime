@@ -24,21 +24,6 @@ const Connector = () => {
           transition={transition}
         />
       </svg>
-      {/* <svg
-        width="2"
-        height="80"
-        viewBox="0 0 2 80"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <motion.path
-          opacity="0.5"
-          d="M 300 100 L 300 400"
-          stroke="#5A1017"
-          stroke-width="2"
-
-        />
-      </svg> */}
     </div>
   );
 };

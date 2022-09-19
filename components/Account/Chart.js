@@ -35,16 +35,12 @@ export function Chart({ cryptoList }) {
   const priceTags = [];
   // let buffer;
   const [dropdown, setdropdown] = useState(false);
-  const [whichCoin, setwhichCoin] = useState(0);
+  const [whichCoin, setwhichCoin] = useState(1);
   // const [scaleCh, setscaleCh] = useState(false);
 
   console.log(cryptoList);
 
-  // const HandleCoinChange = (val) => {
-  //   setwhichCoin(val);
-  //   setscaleCh(!scaleCh);
-  //   window.dispatchEvent(new Event("resize"));
-  // };
+
   const HandleDrop = () => {
     setdropdown(true);
   };
@@ -95,6 +91,13 @@ export function Chart({ cryptoList }) {
     if (index == 24) {
       label.push("now");
     } else {
+      // if(Number((timepoint + 12) % 24) === 0){
+      //   label.push('Today')
+      // }  // const HandleCoinChange = (val) => {
+  //   setwhichCoin(val);
+  //   setscaleCh(!scaleCh);
+  //   window.dispatchEvent(new Event("resize"));
+  // };
       if (timeString.includes("pm")) {
         label.push(Number((timepoint + 12) % 24));
       } else {
@@ -102,11 +105,8 @@ export function Chart({ cryptoList }) {
       }
     }
     timepoint++;
-    console.log(`sdfksdjf;ds`, priceTags, label);
   }
-  // useEffect(() => {
-  //   HandleCoinChange;
-  // }, [whichCoin]);
+ 
 
   //////////////////////////////////////////////////////////////////////
   const data = {
@@ -125,7 +125,7 @@ export function Chart({ cryptoList }) {
   const options = {
     responsive: true,
     maintainAspectRatio: true,
-    fill: false,
+    fill: true,
     scales: {
       y: {
         ticks: {

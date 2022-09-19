@@ -5,6 +5,10 @@ body {
   font-family: Poppins;
   background-color: #f8fafb;
 }
+body {
+  position: absolute;
+  width: 100vw;
+}
 h1 {
   font-weight: 600;
   font-size: 54px;
@@ -33,7 +37,10 @@ li::marker {
 * {
   box-sizing: border-box;
 }
-
+@media (max-width: 480px) {
+  position: absolute;
+  width: 100vw;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
