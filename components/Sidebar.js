@@ -1,4 +1,4 @@
-import { useState } from 'react'
+  import { useState } from 'react'
 import AvatarSection from './AvatarSection'
 import SidebarLinks from './SidebarLinks'
 import styles from './Sidebar.module.scss'

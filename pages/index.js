@@ -56,7 +56,7 @@ const Home = () => {
       },
     }).then((res) => {
       // cryptos = res?.data?.data?.coins;
-      setcryptos(res?.data?.data?.coins)
+      setcryptos(res?.data?.data?.coins);
       console.log(res?.data?.data.coins);
       return cryptos;
     });
@@ -64,85 +64,95 @@ const Home = () => {
   return (
     <div className={styles.LandingPage}>
       <section className={styles.firstSection}>
-        <div className={styles.div}>
-          <Article>
-            <h1 ref={el} />
-            <motion.p
-              initial={{ x: "-100%", opacity: 0 }}
-              animate={{ x: "0%", opacity: 1 }}
-              transition={{ type: "spring", duration: 6, bounce: 0.3 }}
-            >
-              A simple and intuitive way to crypto
-            </motion.p>
-            <button className={styles.GetStartedButton}>
-              Let's get Started
-            </button>
-          </Article>
-          <img src="images/rafiki.png" className={styles.image_div} />
+        <div className={styles.wrapper}>
+          <div className={styles.div}>
+            <Article>
+              <h1 ref={el} />
+              <motion.p
+                initial={{ x: "-100%", opacity: 0 }}
+                animate={{ x: "0%", opacity: 1 }}
+                transition={{ type: "spring", duration: 6, bounce: 0.3 }}
+              >
+                A simple and intuitive way to crypto
+              </motion.p>
+              <button className={styles.GetStartedButton}>
+                Let's get Started
+              </button>
+            </Article>
+            <img src="images/rafiki.png" className={styles.image_div} />
+          </div>
+          <Carousel data={cryptos} />
         </div>
-        <Carousel data={cryptos} />
       </section>
+
       <section className={styles.middleSection}>
-        <MiddleSection />
-        <article
-          className={styles.Message}
-          ref={ref}
-          style={{
-            transform: IsInview ? "none" : "translateX(100px)",
-            opacity: IsInview ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-          }}
-        >
-          <h2>
-            One wallet for all your needs
-            <span>Create your account to buy, exchange and earn interest.</span>
-          </h2>
-          <h2>
-            Top Up Supported Assets
-            <span>Deposit crypto or fiat to your DigiCrypto account.</span>
-          </h2>
-          <h2>
-            Start Earning Instantly
-            <span>
-              You’re all set – no further action is needed! You’re now earning
-              compounding interest on your deposits, paid out daily.
-            </span>
-          </h2>
-          <button className={styles.GetStartedButton}>
-            Join the DigiCrypto Family
-          </button>
-        </article>
+        <div className={styles.wrapper}>
+          <MiddleSection />
+          <article
+            className={styles.Message}
+            ref={ref}
+            style={{
+              transform: IsInview ? "none" : "translateX(100px)",
+              opacity: IsInview ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            <h2>
+              One wallet for all your needs
+              <span>
+                Create your account to buy, exchange and earn interest.
+              </span>
+            </h2>
+            <h2>
+              Top Up Supported Assets
+              <span>Deposit crypto or fiat to your DigiCrypto account.</span>
+            </h2>
+            <h2>
+              Start Earning Instantly
+              <span>
+                You’re all set – no further action is needed! You’re now <br />
+                earning compounding interest on your deposits, paid out daily.
+              </span>
+            </h2>
+            <button className={styles.GetStartedButton}>
+              Join the DigiCrypto Family
+            </button>
+          </article>
+        </div>
       </section>
       <section className={styles.metamaskSection}>
-        <MetamaskSection />
-        <article
-          className={styles.Message}
-          ref={ref2}
-          style={{
-            transform: Inview ? "none" : "translateX(100px)",
-            opacity: Inview ? 1 : 0,
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-          }}
-        >
-          <h2>
-            Metamask
-            <span>All acounts are provided by Metamask.</span>
-          </h2>
-          <h2>
-            Why Metamask?
-            <span>
-              Metamask is a safe and secure wallet that will ensure ease of
-              acess and management of your funds.
-            </span>
-            <span>
-              it backs this up with a user friendly interface to making it quite
-              easy to use.
-            </span>
-          </h2>
-          <button className={styles.GetStartedButton}>
-            Join the DigiCrypto Family
-          </button>
-        </article>
+        <div className={styles.wrapper}>
+          {" "}
+          <MetamaskSection />
+          <article
+            className={styles.Message}
+            ref={ref2}
+            style={{
+              transform: Inview ? "none" : "translateX(100px)",
+              opacity: Inview ? 1 : 0,
+              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            }}
+          >
+            <h2>
+              Metamask
+              <span>All acounts are provided by Metamask.</span>
+            </h2>
+            <h2>
+              Why Metamask?
+              <span>
+                Metamask is a safe and secure wallet that will ensure ease of
+                acess and management of your funds.
+              </span>
+              <span>
+                it backs this up with a user friendly interface to making it
+                quite easy to use.
+              </span>
+            </h2>
+            <button className={styles.GetStartedButton}>
+              Join the DigiCrypto Family
+            </button>
+          </article>
+        </div>
       </section>
       <Footer />
     </div>

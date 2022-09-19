@@ -4,7 +4,9 @@ import NavbarItem from "./NavbarItem";
 import { useScroll } from "framer-motion";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import {MdMenu} from 'react-icons/md'
+import { MdMenu } from "react-icons/md";
+
+
 function Navbar() {
   const { scrollY, scrollYProgress } = useScroll();
 
@@ -37,17 +39,17 @@ function Navbar() {
 
   return (
     <div className={styles.Navigation}>
-      {console.log(scroll, "lasklj")}
-      <NavbarItem href="/">DigiCrypto</NavbarItem>
-      <ul className={styles.navbar}>
-        <NavbarItem href="/">Markets</NavbarItem>
-        <NavbarItem href="#about-section">About</NavbarItem>
-        <li className={styles.NavButton} onClick={HandleLogin}>
-          Login With MetaMask
-        </li>
-      </ul>
-      <MdMenu className={styles.navbar__menu}  />
-      
+      <div className={styles.nav}>
+        <NavbarItem href="/">DigiCrypto</NavbarItem>
+        <ul className={styles.navbar}>
+          <NavbarItem href="/">Markets</NavbarItem>
+          <NavbarItem href="#about-section">About</NavbarItem>
+          <li className={styles.NavButton} onClick={HandleLogin}>
+            Login With MetaMask
+          </li>
+        </ul>
+        <MdMenu className={styles.navbar__menu} />
+      </div>
     </div>
   );
 }

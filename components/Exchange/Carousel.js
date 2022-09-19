@@ -6,10 +6,8 @@ import "swiper/css/effect-fade";
 import styles from "./Exchange.module.scss";
 
 ///////////////////////////////////////
-// const SLIDE_COUNT = 20;
-// const slides = Array.from(Array(SLIDE_COUNT).keys());
+
 const Carousel = (slides) => {
-  // const slides = data?.data
   console.log(`slides`, slides);
 
   return (
@@ -28,7 +26,6 @@ const Carousel = (slides) => {
       {slides?.data.map((slide) => (
         <SwiperSlide className={styles.slide} key={slide.symbol}>
           <a href={slide.coinrankingUrl} target="_blank">
-            {" "}
             <img src={slide.iconUrl} />
           </a>
         </SwiperSlide>
