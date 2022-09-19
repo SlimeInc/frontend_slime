@@ -12,6 +12,9 @@
   align-items: center;
   margin: 25px 50px 75px;
   padding-bottom: 90px;
+  @media(max-width: 480px){
+    width: 40%;
+  }
 }
 .Message,
 .Tristand {
