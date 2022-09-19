@@ -4,20 +4,14 @@ import { A11y, Autoplay, EffectFade } from "swiper";
 import "swiper/css/autoplay";
 import "swiper/css/effect-fade";
 import styles from "./Exchange.module.scss";
-import { mediaByIndex } from "../../public/images";
 
 ///////////////////////////////////////
 // const SLIDE_COUNT = 20;
 // const slides = Array.from(Array(SLIDE_COUNT).keys());
-const Carousel = ({ data }) => {
-  const slides = data?.data?.coins;
-  console.log(slides);
-  // Now you can use Swiper
-  // const swiper = new Swiper(".swiper", {
-  //   // Install modules
-  //   modules: [A11y, Autoplay, EffectCoverflow],
-  //   speed: 500,
-  // });
+const Carousel = (slides) => {
+  // const slides = data?.data
+  console.log(`slides`, slides);
+
   return (
     <Swiper
       // install Swiper modules
@@ -31,9 +25,12 @@ const Carousel = ({ data }) => {
       onSlideChange={() => console.log("slide change")}
       className={styles.swipe}
     >
-      {slides?.map((slide) => (
+      {slides?.data.map((slide) => (
         <SwiperSlide className={styles.slide} key={slide.symbol}>
-          <img src={slide.iconUrl}  />
+          <a href={slide.coinrankingUrl} target="_blank">
+            {" "}
+            <img src={slide.iconUrl} />
+          </a>
         </SwiperSlide>
       ))}
     </Swiper>

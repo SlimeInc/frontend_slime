@@ -2,9 +2,9 @@ import React from "react";
 import Article from "../components/Article";
 import Footer from "../components/Footer";
 import { motion, useInView } from "framer-motion";
-import rafiki from "../public/images/rafiki.png";
+import axios from "axios";
 import MiddleSection from "../components/MiddleSection";
-import Image from "next/image";
+import { useState } from "react";
 import MetamaskSection from "../components/Metamask";
 import styles from "../styles/Home.module.scss";
 import Typed from "typed.js";
@@ -14,7 +14,8 @@ import Carousel from "../components/Exchange/Carousel";
 ////////////
 const baseUrl = "https://coinranking1.p.rapidapi.com/";
 const url = baseUrl + "coins";
-const Home = ({ cryptos }) => {
+const Home = () => {
+  const [cryptos, setcryptos] = useState([]);
   const MotionComponent = motion(Article, { forwardMotionProps: true });
   const ref = useRef(null);
   const IsInview = useInView(ref, { amount: 0.5 });
@@ -35,10 +36,35 @@ const Home = ({ cryptos }) => {
       typed.current.destroy();
     };
   }, []);
+
+  useEffect(() => {
+    axios({
+      method: "get",
+      url: url,
+      params: {
+        referenceCurrencyUuid: "yhjMzLPhuIDl",
+        timePeriod: "24h",
+        "tiers[0]": "1",
+        orderBy: "marketCap",
+        orderDirection: "desc",
+        limit: "20",
+        offset: "0",
+      },
+      headers: {
+        "X-RapidAPI-Key": "2c2471d33emshc7b01b1765b7f77p11e8e4jsn188a88417780",
+        "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+      },
+    }).then((res) => {
+      // cryptos = res?.data?.data?.coins;
+      setcryptos(res?.data?.data?.coins)
+      console.log(res?.data?.data.coins);
+      return cryptos;
+    });
+  }, []);
   return (
     <div className={styles.LandingPage}>
       <section className={styles.firstSection}>
-      <div className={styles.div}>
+        <div className={styles.div}>
           <Article>
             <h1 ref={el} />
             <motion.p
@@ -54,7 +80,7 @@ const Home = ({ cryptos }) => {
           </Article>
           <img src="images/rafiki.png" className={styles.image_div} />
         </div>
-      <Carousel  data={cryptos} />
+        <Carousel data={cryptos} />
       </section>
       <section className={styles.middleSection}>
         <MiddleSection />
@@ -124,32 +150,32 @@ const Home = ({ cryptos }) => {
 };
 
 // This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch(url, {
-    method: "GET",
-    params: {
-      referenceCurrencyUuid: "yhjMzLPhuIDl",
-      timePeriod: "24h",
-      "tiers[0]": "1",
-      orderBy: "marketCap",
-      orderDirection: "desc",
-      limit: "20",
-      offset: "0",
-    },
-    headers: {
-      "X-RapidAPI-Key": "2c2471d33emshc7b01b1765b7f77p11e8e4jsn188a88417780",
-      "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-    },
-  });
-  const cryptos = await res.json();
-  // const cryptos = await data.data.coins
-  console.log(cryptos.data.coins);
-  // Pass data to the page via props
-  return { props: { cryptos } || { cryptos: `czechoslav` } };
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   const res = await fetch(url, {
+//     method: "GET",
+// params: {
+//   referenceCurrencyUuid: "yhjMzLPhuIDl",
+//   timePeriod: "24h",
+//   "tiers[0]": "1",
+//   orderBy: "marketCap",
+//   orderDirection: "desc",
+//   limit: "20",
+//   offset: "0",
+// },
+//     headers: {
+//       "X-RapidAPI-Key": "2c2471d33emshc7b01b1765b7f77p11e8e4jsn188a88417780",
+//       "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+//     },
+//   });
+//   const cryptos = await res.json();
+//   // const cryptos = await data.data.coins
+//   console.log(cryptos.data.coins);
+//   // Pass data to the page via props
+//   return { props: { cryptos } || { cryptos: `czechoslav` } };
 
-  console.log(`are we there yet `);
-}
+//   console.log(`are we there yet `);
+// }
 export default Home;
 
 // useEffect(() => {
