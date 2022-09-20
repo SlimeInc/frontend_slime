@@ -4,7 +4,7 @@ import { TransactionContext } from "../context/TransactionContext";
 
 
 
-const TestContractData = () => {
+const testContextData = () => {
     
     const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction } = useContext(TransactionContext)
     
@@ -35,10 +35,11 @@ const TestContractData = () => {
             )}
 
             <div>
-                <Input placeholder="Address To" name="addressTo" type="text" handleChange={handleChange} />
-                <Input placeholder="Amount (Eth)" name="amount" type="number" handleChange={handleChange} />
-                <Input placeholder="Keyword" name="keyword" type="text" handleChange={handleChange} />
-                <Input placeholder="Enter Message" name="message" type="text" handleChange={handleChange} />
+                <input placeholder="Address To" name="addressTo" type="text" handleChange={handleChange} />
+                <input placeholder="Amount (Eth)" name="amount" type="number" handleChange={handleChange} />
+                <input placeholder="Keyword" name="keyword" type="text" handleChange={handleChange} />
+                <input placeholder="Enter Message" name="message" type="text" handleChange={handleChange} />
+                
 
                 <div>
                     {false ? (
@@ -59,4 +60,4 @@ const TestContractData = () => {
 
 }
 
-export default TestContractData;
+export default testContextData;
