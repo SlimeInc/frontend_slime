@@ -5,8 +5,6 @@ import { contractABI, contractAddress } from '../utils/constants'
 
 export const TransactionContext = React.createContext()
 
-const { ethereum } = window; //obtain ethereum object from metamask
-
 
 //fetch our ethereum contract
 const getEthContract = () => {
@@ -27,8 +25,13 @@ export const TransactionProvider = ({ children }) => {
     const [currentAccount, setCurrentAccount] = useState('')
     const [formData, setFormData] = useState({ addressTo: '', amount: '', keyword: '', message: '' })
     const [isLoading, setIsLoading] = useState(false)
-    const [transactionCount, setTransactionCount] = useState(localStorage.getItem('transactionCount')) //cache transactionCount in localStorage
+    const [transactionCount, setTransactionCount] = useState(0) //cache transactionCount in localStorage.getItem('transactionCount')
 
+    useEffect(() => {
+        const { ethereum } = window; //obtain ethereum object from metamask
+        console.log("Window object:", ethereum)
+
+    }, [])
 
     //dynamically update formData
     const handleChange = (e, name) => {
