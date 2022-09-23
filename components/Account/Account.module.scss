@@ -1,7 +1,7 @@
 .main {
   height: inherit;
   width: 100%;
-  padding: 4%;
+  //padding: 4%;
   background-color: inherit;
   margin: auto;
 }
@@ -85,6 +85,7 @@
   align-items: center;
   justify-content: space-evenly;
   border-radius: 15px;
+  color: black;
   @media (max-width: 480px) {
     width: 100%;
     font-size: 0.5rem;
@@ -98,26 +99,27 @@
   }
 }
 .stats_card {
-  height: 25%;
-  width: 70%;
-  min-width: 350px;
+  //height: 25%;
+  //width: 70%;
+  //min-width: 350px;
   padding: 1.5px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border-radius: 10px;
+  background-color: #ffffff;
   border: 1px solid #dddada;
   box-shadow: inset 0px 0px 2px rgb(231, 223, 223);
 
   h4 {
-    color: #817f7f;
-    font-weight: 300;
+    color: #615d5d;
+    font-weight: 500;
   }
   h2 {
-    color: #70131b;
+    color: #090909;
     height: 40%;
-    max-width: 100%;
+    //max-width: 100%;
     text-align: center;
   }
   @media (max-width: 480px) {
