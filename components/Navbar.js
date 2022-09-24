@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
 import styles from "./Navbar.module.scss";
-import detectEthereumProvider from "@metamask/detect-provider";
 
 import { TransactionContext } from "../context/TransactionContext";
 import NavbarItem from "./NavbarItem";
@@ -30,16 +29,13 @@ function Navbar() {
         <NavbarItem href="/">Exchange</NavbarItem>
         <NavbarItem href="/">Markets</NavbarItem>
         <NavbarItem href="#about-section">About</NavbarItem>
-        {/* <li className={styles.NavButton} onClick={HandleLogin}>
-          Login With MetaMask
-        </li> */}
         {!currentAccount && (
                 <button
                     type="button"
                     onClick={connectWallet}
 
                 >
-                    <p>Connect Wallet</p>
+                    <p>Login With MetaMask</p>
                 </button>
             )}
       </ul>
