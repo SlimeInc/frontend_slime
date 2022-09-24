@@ -14,25 +14,7 @@ function Navbar() {
 
   const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction } = useContext(TransactionContext)
 
-  const router = useRouter();
-  const HandleLogin = async () => {
-    const provider = await detectEthereumProvider({ mustBeMetaMask: true });
-    if (provider) {
-      console.log("Ethereum successfully detected!");
-      // From now on, this should always be true:
-      // provider === window.ethereum;
 
-      // Legacy providers may only have ethereum.sendAsync
-      const accounts = await ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      const account = accounts[0];
-      router.push("/account");
-    } else {
-      // if the provider is not detected, detectEthereumProvider resolves to null
-      alert("Please install MetaMask!");
-    }
-  };
   let scroll;
   useEffect(() => {
     scrollY.onChange((latest) => {
