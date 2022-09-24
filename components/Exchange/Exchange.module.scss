@@ -2,20 +2,23 @@
   height: 70vh;
   width: max-content;
   position: relative;
+  display: grid;
+  justify-content: center;
+  align-items: center;
   //   border: black 2px solid;
 
   ::placeholder {
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
-    color: #3b0540;
+    color: #fff;
   }
   ::-webkit-input-placeholder {
     /* Edge */
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
-    color: #3b0540;
+    color: #fff;
   }
 
   :-ms-input-placeholder {
@@ -23,7 +26,7 @@
     font-weight: 600;
     font-size: 15px;
     line-height: 22px;
-    color: #3b0540;
+    color: #fff;
   }
 
   .form_label {
