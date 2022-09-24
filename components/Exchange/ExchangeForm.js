@@ -1,132 +1,78 @@
-import styles from "./Exchange.module.scss";
-import InputField from "./InputField";
-import Connector from "./Connector";
-import DropdownMenu from "./DropdownMenu";
-import { useState, useEffect } from "react";
-import ErrorMessage from "./ErrorMessage";
-// import { useFormik, Field } from "formik";
-// import * as Yup from "yup";
-// import { fa } from "faker/lib/locales";
-import InputSelect from "./InputSelect";
-import vi from "faker/lib/locales/vi";
+import React, { useState, useEffect, useContext } from "react";
 
-const wallet = {
-  ETH: { amt: "27" },
-  USDT: { amt: "27567" },
-  SOL: { amt: "34" },
-};
+
+import { TransactionContext } from "../../context/TransactionContext";
+import styles from "./Exchange.module.scss";
+
+
+
+const Input = ({ placeholder, name, type, value, handleChange }) => (
+  <input
+    placeholder={placeholder}
+    type={type}
+    step="0.0001"
+    value={value}
+    onChange={(e) => handleChange(e, name)}
+    className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism"
+  />
+);
+
 
 const ExchangeForm = () => {
-  const [dropdown, setdropdown] = useState(false);
-  // const [asset, setAsset] = useState("");
-  const [field, showField] = useState({
-    amount: 0,
-    asset: "",
-    address: "",
-    message: "",
-  });
-  const [visit, setvisit] = useState({
-    asset: true,
-    amount: false,
-    address: false,
-    message: false,
-  });
-  useEffect(() => {
-    console.log(field.asset.toString());
-    console.log(wallet.hasOwnProperty(field.asset.toUpperCase()),visit.amount)
-  }, [field.asset]);
+  const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction } = useContext(TransactionContext)
+  
+  const handleSubmit = (e) => {
+    const { addressTo, amount, keyword, message } = formData
+    
+    e.preventDefault() //prevent auto-refresh after submission
 
-  const HandleSubmit = (e) => {
-    e.preventDefault();
-  };
+    if (!addressTo || !amount || !keyword || !message) return;
+
+    sendTransaction()
+  }
+  console.log(currentAccount)
 
   return (
-    <form className={styles.exchange_form} onSubmit={HandleSubmit}>
-      <label htmlFor="Select_asset" className={styles.form_label}>
-        {" "}
-        How much would you like to send ?
-      </label>
-      <InputField
-        name="Select_asset"
-        type="text"
-        placeholder="asset"
-        id="Select_asset"
-        setdropdown={setdropdown}
-        dropdown={dropdown}
-        showField={showField}
-        value={field.asset}
-        field={field}
+    <div  className={styles.exchange_form}>
+      <Input 
+        placeholder="Address To" 
+        name="addressTo" 
+        type="text" 
+        handleChange={handleChange} 
       />
-      <DropdownMenu
-        dropdown={dropdown}
-        setdropdown={setdropdown}
-        showField={showField}
-        field={field}
+      <Input 
+        placeholder="Amount (Eth)" 
+        name="amount" 
+        type="number" 
+        handleChange={handleChange} 
       />
-      { (wallet.hasOwnProperty(field.asset.toUpperCase()) ? 
-          () => {setvisit(({ ...visit, 'amount': true }))}
-         : (
-          <ErrorMessage id="asset" />
-        ))}
+      <Input 
+        placeholder="Keyword" 
+        name="keyword" 
+        type="text" 
+        handleChange={handleChange} 
+      />
+      <Input 
+        placeholder="Enter Message" 
+        name="message" 
+        type="text" 
+        handleChange={handleChange} 
+      />
+                
 
-      {visit.amount && <Connector />}
-
-      {visit.amount && (
-        <InputSelect
-          name="amount"
-          type="text"
-          placeholder="amount"
-          id="amount"
-          disabled={!visit.amount}
-          value={field.amount}
-          field={field}
-          showField={showField}
-        />
-      )}
-      {typeof field.amount == "number" &&
-      field.amount > 0 <= wallet[field.asset ]? (
-        () => setvisit({ ...visit, address: true })
-      ) : (
-        <ErrorMessage id="amount" />
-      )}
-      {visit.address && <Connector />}
-      {visit.address && (
-        <InputSelect
-          name="address"
-          type="text"
-          placeholder="address"
-          id="address"
-          disabled={!visit.address}
-          value={field.address}
-          field={field}
-          showField={showField}
-        />
-      )}
-      {visit.address ? (
-        () => setvisit({ ...visit, message: true })
-      ) : (
-        <ErrorMessage id="address" />
-      )}
-      {visit.message && <Connector />}
-      {visit.message && (
-        <InputSelect
-          name="message"
-          type="textArea"
-          placeholder="message"
-          id="message"
-          disabled={!visit.message}
-          value={field.address}
-          field={field}
-          required={false}
-          showField={showField}
-        />
-      )}
-      {visit.message && (
-        <button type="submit" className={styles.send}>
-          SEND
-        </button>
-      )}
-    </form>
+      <div>
+          {false ? (
+              <Loader></Loader>
+          ) : (
+              <button
+                  type="button"
+                  onClick={handleSubmit}
+              >
+                  SEND
+              </button>
+          )}
+      </div>
+    </div>
   );
 };
 
