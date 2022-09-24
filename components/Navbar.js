@@ -1,5 +1,9 @@
+import React, { useContext } from "react";
+
 import styles from "./Navbar.module.scss";
 import detectEthereumProvider from "@metamask/detect-provider";
+
+import { TransactionContext } from "../context/TransactionContext";
 import NavbarItem from "./NavbarItem";
 import { useScroll } from "framer-motion";
 import { useEffect } from "react";
@@ -7,6 +11,8 @@ import { useRouter } from "next/router";
 
 function Navbar() {
   const { scrollY, scrollYProgress } = useScroll();
+
+  const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction } = useContext(TransactionContext)
 
   const router = useRouter();
   const HandleLogin = async () => {
@@ -37,14 +43,23 @@ function Navbar() {
 
   return (
     <div className={styles.Navigation}>
-      {console.log(scroll, "lasklj")}
       <NavbarItem href="/">DigiCrypto</NavbarItem>
       <ul>
+        <NavbarItem href="/">Exchange</NavbarItem>
         <NavbarItem href="/">Markets</NavbarItem>
         <NavbarItem href="#about-section">About</NavbarItem>
-        <li className={styles.NavButton} onClick={HandleLogin}>
+        {/* <li className={styles.NavButton} onClick={HandleLogin}>
           Login With MetaMask
-        </li>
+        </li> */}
+        {!currentAccount && (
+                <button
+                    type="button"
+                    onClick={connectWallet}
+
+                >
+                    <p>Connect Wallet</p>
+                </button>
+            )}
       </ul>
     </div>
   );
