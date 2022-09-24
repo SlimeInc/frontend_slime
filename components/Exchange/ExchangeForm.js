@@ -28,7 +28,7 @@ const ExchangeForm = () => {
 
     sendTransaction()
   }
-  console.log(currentAccount)
+  console.log("Current wallet: ",currentAccount)
 
   return (
     <div  className={styles.exchange_form}>
@@ -37,6 +37,7 @@ const ExchangeForm = () => {
         name="addressTo" 
         type="text" 
         handleChange={handleChange} 
+        className={styles.input_fields}
       />
       <Input 
         placeholder="Amount (Eth)" 
