@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import InputSelect from "./InputSelect";
 
 const wallet = {
-  ETH: { amt: "27" },
+  BTC: { amt: "27" },
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };
@@ -24,10 +24,9 @@ const ExchangeForm = () => {
   // }, [field.asset]);
   const FormSchema = Yup.object().shape({
     asset: Yup.string().oneOf(Object.keys(wallet)).required("asset required"),
-    amount: Yup.number().max(
-      wallet[Yup.ref('asset')]?.amt,
-      "exceeded maximum amount"
-    ).min(0,'invalid amount'),
+    amount: Yup.number()
+      .max(wallet[]?.amt, "exceeded maximum amount")
+      .min(0, "invalid amount"),
     address: Yup.mixed().required("receiver address required"),
   });
 
@@ -45,13 +44,9 @@ const ExchangeForm = () => {
       >
         {(papya) => (
           <div>
-            {console.log(`papaya`,papya.values)}
+            {console.log(`papaya`, papya.values)}
             <Form>
-              <InputField
-                name="asset"
-                type="select"
-                placeholder="asset"
-              />
+              <InputField name="asset" type="select" placeholder="asset" />
               <InputSelect
                 name="amount"
                 type="text"

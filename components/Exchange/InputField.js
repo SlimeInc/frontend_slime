@@ -5,29 +5,19 @@ import DropdownMenu from "./DropdownMenu";
 import { useState } from "react";
 
 const wallet = {
-  ETH: { amt: "27" },
+  BTC: { amt: "27" },
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };
 
-
 const InputField = (props) => {
-  // const HandleChange = (e) => {
-  //   e.preventDefault();
-  //   const value = e.target.value;
-  //   props.showField((field) => ({ ...field, asset: value }));
-  //   console.log(props);
-  // };
   const [dropdown, setdropdown] = useState(false);
   const [field, meta] = useField(props);
   return (
     <>
       <div className={styles.input_field_div}>
         <div className={styles.dropdown_design}>
-          <MdOutlineArrowDropDown
-            color="white"
-            size="2em"
-          />
+          <MdOutlineArrowDropDown color="white" size="2em" />
         </div>
 
         <div className={styles.input_field}>
@@ -38,6 +28,7 @@ const InputField = (props) => {
                 value={asset}
                 key={asset.toString()}
                 className={styles.dropdown_content_item}
+                
               >
                 {asset}
               </option>
