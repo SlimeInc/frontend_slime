@@ -32,11 +32,11 @@
 
 .sidebar {
   position: fixed;
-  background: #5a1017;
+  background: #10405a;
   left: 0;
   top: 0;
   height: 100%;
-  width: 15%;
+  width: 16%;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
   z-index: 10;
@@ -54,7 +54,7 @@
   }
 }
 .sidebar_item {
-  width: 100%;
+  width: 80%;
   padding: 10px 45px;
   display: flex;
   justify-content: baseline;
@@ -75,9 +75,9 @@
 }
 .sidebar_item_active {
   @extend .sidebar_item;
-  background: #70131b;
+  background: #366a8d;
   border-radius: 41px;
-  padding-left: 5px;
+  padding-left: 20px;
   @media (max-width: 480px) {
     border-radius: 0;
     div {

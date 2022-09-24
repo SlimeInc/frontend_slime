@@ -64,6 +64,7 @@ const Home = () => {
   return (
     <div className={styles.LandingPage}>
       <section className={styles.firstSection}>
+      {/* <img src="images/dashboard.png" className={styles.image_div} /> */}
         <div className={styles.wrapper}>
           <div className={styles.div}>
             <Article>
@@ -79,11 +80,12 @@ const Home = () => {
                 Let's get Started
               </button>
             </Article>
-            <img src="images/rafiki.png" className={styles.image_div} />
+            
           </div>
-          <Carousel data={cryptos} />
+          
         </div>
       </section>
+      <Carousel data={cryptos} className={styles.carousel} />
 
       <section className={styles.middleSection}>
         <div className={styles.wrapper}>
@@ -108,7 +110,7 @@ const Home = () => {
               <span>Deposit crypto or fiat to your DigiCrypto account.</span>
             </h2>
             <h2>
-              Start Earning Instantly
+              Decentralized
               <span>
                 You’re all set – no further action is needed! You’re now <br />
                 earning compounding interest on your deposits, paid out daily.

@@ -8,7 +8,7 @@ body {
 }
 body {
   position: absolute;
-  width: 100vw;
+   width: 100vw;
   @media (max-width: 480px) {
     width: 100%;
   }
@@ -41,7 +41,10 @@ li::marker {
 * {
   box-sizing: border-box;
 }
-
+@media (max-width: 480px) {
+  position: absolute;
+  width: 100vw;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -51,3 +54,4 @@ li::marker {
     background: white;
   }
 }
+

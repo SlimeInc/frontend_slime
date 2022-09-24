@@ -9,8 +9,8 @@ const MetamaskSection = () => {
       {" "}
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="650"
-        height="400"
+        width="550"
+        height="300"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 256 240"
       >
