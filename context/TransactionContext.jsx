@@ -12,7 +12,7 @@ const getEthContract = () => {
     const signer = provider.getSigner()
     const transactionContract = new ethers.Contract(contractAddress, contractABI, signer)
     
-    console.log({
+    console.log('Provider, Signer, tContract:',{
         provider, 
         signer,
         transactionContract
@@ -29,7 +29,8 @@ export const TransactionProvider = ({ children }) => {
 
     useEffect(() => {
         const { ethereum } = window; //obtain ethereum object from metamask
-        console.log("Window object:", ethereum)
+        console.log("Window object:", window)
+        console.log("Ethereum object:", ethereum)
 
     }, [])
 
@@ -44,6 +45,7 @@ export const TransactionProvider = ({ children }) => {
             if (!ethereum) return alert("Please install Metamask")
     
             const accountsAvailable = await ethereum.request({ method: 'eth_accounts' })
+            // console.log('Eth accts available:', accountsAvailable)
 
             if (accountsAvailable.length) {
                 setCurrentAccount(accountsAvailable[0])
@@ -62,7 +64,7 @@ export const TransactionProvider = ({ children }) => {
 
     const connectWallet = async () => {
         try {
-            if (!ethereum) return alert("Please install Metamask")
+            if (!ethereum) return alert("Please install Metamask!")
 
             const accountsAvailable = await ethereum.request({ method: 'eth_requestAccounts' })
 
