@@ -25,7 +25,7 @@ const ExchangeForm = () => {
   const FormSchema = Yup.object().shape({
     asset: Yup.string().oneOf(Object.keys(wallet)).required("asset required"),
     amount: Yup.number()
-      .max(wallet[]?.amt, "exceeded maximum amount")
+      .max(wallet["BTC"]?.amt, "exceeded maximum amount")
       .min(0, "invalid amount"),
     address: Yup.mixed().required("receiver address required"),
   });
