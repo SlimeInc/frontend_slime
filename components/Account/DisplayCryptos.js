@@ -5,8 +5,8 @@ import AccountCard from "./AccountCard";
 export const DisplayCryptos = ({ cryptos }) => {
   cryptos = cryptos?.slice(0, 12);
   return (
-    <Section>
-      <h2>Trending coins</h2>
+    <Section style={{backgroundColor:'white'}}>
+      <h2 className={styles.your_asset}>Trending coins</h2>
       <div className={styles.display_cryptos}>
         {cryptos?.map((coin) => (
           <AccountCard coin={coin} key={coin.name} />

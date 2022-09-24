@@ -6,7 +6,7 @@ function Footer() {
     <div>
       {" "}
       {
-        <section className={styles.rearSection} id="#about-section">
+        <section className={styles.rearSection} id="about-section">
           {/* <div className={styles.space}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
               <path

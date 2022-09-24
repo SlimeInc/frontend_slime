@@ -2,18 +2,18 @@
   height: 70vh;
   width: max-content;
   position: relative;
-  //   border: black 2px solid;
-
+  @media (max-width: 480px) {
+    width: 80%;
+    margin: auto;
+  }
   ::placeholder {
     font-weight: 600;
-    font-size: 15px;
     line-height: 22px;
     color: #3b0540;
   }
   ::-webkit-input-placeholder {
     /* Edge */
     font-weight: 600;
-    font-size: 15px;
     line-height: 22px;
     color: #3b0540;
   }
@@ -21,9 +21,9 @@
   :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     font-weight: 600;
-    font-size: 15px;
     line-height: 22px;
     color: #3b0540;
+
   }
 
   .form_label {
@@ -53,6 +53,9 @@
   margin-top: -10px;
   opacity: 1;
   transition: all 0.5 ease;
+  @media (max-width: 480px) {
+    // height: 0%;
+  }
   &_disabled {
     opacity: 0.6;
     .dropdown_design {
@@ -92,7 +95,8 @@
       font-size: 0.4em;
       height: 40%;
     }
-    input,select {
+    input,
+    select {
       appearance: none;
       height: 60%;
       width: 100%;
@@ -107,10 +111,9 @@
         background-color: inherit;
       }
     }
-    select{
+    select {
       width: 120%;
       cursor: pointer;
-
     }
   }
 }
