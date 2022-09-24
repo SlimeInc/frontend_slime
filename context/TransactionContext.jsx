@@ -25,6 +25,7 @@ export const TransactionProvider = ({ children }) => {
     const [currentAccount, setCurrentAccount] = useState('')
     const [formData, setFormData] = useState({ addressTo: '', amount: '', keyword: '', message: '' })
     const [isLoading, setIsLoading] = useState(false)
+    const [transactions, setTransactions] = useState([])
     const [transactionCount, setTransactionCount] = useState(0) //cache transactionCount in localStorage.getItem('transactionCount')
 
     useEffect(() => {
@@ -39,6 +40,13 @@ export const TransactionProvider = ({ children }) => {
         setFormData((prevState) => ({ ...prevState, [name]: e.target.value }))
     }
 
+    const getAllTransactions = async () => {
+        try {
+            
+        } catch (error) {
+            console.alert("Ethereum object not detected.")
+        }
+    }
 
     const checkForWalletConnection = async () => {
         try {
