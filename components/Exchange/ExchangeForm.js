@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 
-
 import { TransactionContext } from "../../context/TransactionContext";
 import styles from "./Exchange.module.scss";
-
 
 
 const Input = ({ placeholder, name, type, value, handleChange }) => (
