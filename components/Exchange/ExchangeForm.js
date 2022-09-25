@@ -45,7 +45,7 @@ const ExchangeForm = () => {
         {(papya) => (
           <div>
             {console.log(`papaya`, papya.values)}
-            <Form>
+            <Form >
               <InputField name="asset" type="select" placeholder="asset" />
               <InputSelect
                 name="amount"
@@ -77,65 +77,3 @@ const ExchangeForm = () => {
 };
 
 export default ExchangeForm;
-// <form className={styles.exchange_form} onSubmit={HandleSubmit}>
-//   <label htmlFor="Select_asset" className={styles.form_label}>
-//     {" "}
-//   </label>
-// <InputField
-//   name="Select_asset"
-//   type="text"
-//   placeholder="asset"
-//   id="Select_asset"
-//   setdropdown={setdropdown}
-//   dropdown={dropdown}
-//   showField={showField}
-//   value={field.asset}
-//   field={field}
-// />
-//   <DropdownMenu
-//     dropdown={dropdown}
-//     setdropdown={setdropdown}
-//     showField={showField}
-//     field={field}
-//   />
-//    <Connector />
-
-// <InputSelect
-//   name="amount"
-//   type="text"
-//   placeholder="amount"
-//   id="amount"
-//   value={field.amount}
-//   field={field}
-//   showField={showField}
-// />
-
-//  <Connector />
-
-// <InputSelect
-//   name="address"
-//   type="text"
-//   placeholder="address"
-//   id="address"
-//   value={field.address}
-//   field={field}
-//   showField={showField}
-// />
-
-//    <Connector />
-
-// <InputSelect
-//   name="message"
-//   type="textArea"
-//   placeholder="message"
-//   id="message"
-//   field={field}
-//   required={false}
-//   showField={showField}
-// />
-
-// <button type="submit" className={styles.send}>
-//   SEND
-// </button>
-
-// </form>

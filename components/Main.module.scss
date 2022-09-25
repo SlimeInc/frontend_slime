@@ -1,12 +1,13 @@
 .main {
   position: absolute;
   right: 0;
+  // top:0;
   width: 85%;
-  background-color: #f8fafb;
-  height: 100vh;
+  background-color: #f5fafc;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   // @media(max-width:480px){
   //   width: 

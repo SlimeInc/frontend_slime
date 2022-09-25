@@ -7,13 +7,9 @@ const InputSelect = (props) => {
 
   return (
     <>
-      <Connector />
       <div className={styles.input_field_div}>
-        <div className={styles.dropdown_design} />
-        <div className={styles.input_field}>
-          <div>{props.placeholder}</div>
-          <input {...field} placeholder="" />{" "}
-        </div>
+        {/* <div className={styles.dropdown_design} /> */}
+          <input {...field} placeholder={props.placeholder} />{" "}
       </div>
       <div className={styles.error}>
         <ErrorMessage name={field.name} />

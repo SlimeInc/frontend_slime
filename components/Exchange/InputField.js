@@ -16,25 +16,19 @@ const InputField = (props) => {
   return (
     <>
       <div className={styles.input_field_div}>
-        <div className={styles.dropdown_design}>
-          <MdOutlineArrowDropDown color="white" size="2em" />
-        </div>
-
-        <div className={styles.input_field}>
-          <div>{props.placeholder}</div>
+  
           <select {...field} className={styles.input_field}>
             {Object.keys(wallet).map((asset) => (
               <option
                 value={asset}
                 key={asset.toString()}
                 className={styles.dropdown_content_item}
-                
+
               >
                 {asset}
               </option>
             ))}
           </select>{" "}
-        </div>
       </div>
       <div className={styles.error}>
         <ErrorMessage name={field.name} />
