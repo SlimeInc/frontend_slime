@@ -75,4 +75,4 @@ const ExchangeForm = () => {
   );
 };
 
-// </form>
+export default ExchangeForm;
