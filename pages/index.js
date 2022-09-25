@@ -10,6 +10,7 @@ import styles from "../styles/Home.module.scss";
 import Typed from "typed.js";
 import { useRef, useEffect } from "react";
 import Carousel from "../components/Exchange/Carousel";
+import Team from "../components/Team"
 
 ////////////
 const baseUrl = "https://coinranking1.p.rapidapi.com/";
@@ -153,6 +154,30 @@ const Home = () => {
             <button className={styles.GetStartedButton}>
               Join the DigiCrypto Family
             </button>
+          </article>
+        </div>
+      </section>
+      <section className={styles.metamaskSection}>
+        <div className={styles.wrapper}>
+          {" "}
+          <MetamaskSection />
+          <article
+          >
+            <h2>
+              Metamask
+              <span>All acounts are provided by Metamask.</span>
+            </h2>
+            <h2>
+              Why Metamask?
+              <span>
+                Metamask is a safe and secure wallet that will ensure ease of
+                acess and management of your funds.
+              </span>
+              <span>
+                it backs this up with a user friendly interface to making it
+                quite easy to use.
+              </span>
+            </h2>
           </article>
         </div>
       </section>
