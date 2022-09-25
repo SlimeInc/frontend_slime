@@ -2,20 +2,21 @@
   height: 70vh;
   width: max-content;
   position: relative;
-  @media (max-width: 480px) {
-    width: 80%;
-    margin: auto;
-  }
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  //   border: black 2px solid;
+
   ::placeholder {
     font-weight: 600;
     line-height: 22px;
-    color: #366a8d;
+    color: #fff;
   }
   ::-webkit-input-placeholder {
     /* Edge */
     font-weight: 600;
     line-height: 22px;
-    color: #366a8d;
+    color: #fff;
   }
 h2{
   color:#366a8d
@@ -24,7 +25,7 @@ h2{
     /* Internet Explorer 10-11 */
     font-weight: 600;
     line-height: 22px;
-    color: #366a8d;
+    color: #fff;
   }
 
   .form_label {
