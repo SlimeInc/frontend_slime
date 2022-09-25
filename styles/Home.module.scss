@@ -9,7 +9,7 @@
 
 .wrapper {
   width: 65%;
-  margin: auto;
+  margin:0 auto;
   display: flex;
   justify-content: space-between;
   // align-items: center;
@@ -112,7 +112,7 @@
   // box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
   // box-shadow: inset 14px 0px  rgba(0, 0, 0, 0.25);
   // box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
-  height: 100vh;
+  height: 90vh;
   //padding-top: 10%;
   z-index: 20;
   @media (max-width: 480px) {
@@ -142,7 +142,7 @@
   align-items: center;
   //box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
   //box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
-  height: 100vh;
+  height: 90vh;
   //padding-left: 5%;
   overflow-x: hidden;
   article {
@@ -165,7 +165,10 @@
 .metamaskSection_photo {
  width: 50%;
 justify-self: flex-start;
- }
+}
+
+
+
 .rearSection {
   position: relative;
   display: flex;
@@ -263,5 +266,65 @@ justify-self: flex-start;
   &:hover {
     scale: 1.05;
     transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.3s;
+  }
+}
+.TeamSection{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  // border: 1px solid rgb(17, 14, 14);
+  h2{
+    display: block;
+    height: 20%;
+  }
+  .teamGallery{
+    display: flex;
+    justify-content: space-evenly;
+    height: 80%;
+    width: 100%;
+  }
+  .teamMember{
+    // background-color: #30a89a;
+   width: 25%;
+   height: 70%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
+
+
+   .avatar_pic {
+    background-color: rgb(136, 46, 46);
+    width: 60%;
+    height: 50%;
+    //border-radius: 50%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 480px) {
+      width: 40px;
+      height: 40px;
+    }
+  img{
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+
+  }}
+    span {
+      display: block;
+      color: #000;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 22px;
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
   }
 }
