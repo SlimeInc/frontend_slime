@@ -10,7 +10,7 @@ const Connector = () => {
         width="10"
         height="80"
         viewBox="0 0 1 540"
-        fill="none"
+        fill="#366a8d"
         xmlns="http://www.w3.org/2000/svg"
       >
         <motion.line
@@ -18,9 +18,9 @@ const Connector = () => {
           y1="539.017"
           x2="0.5"
           y2="0.983276"
-          stroke="black"
+          stroke="#366a8d"
           initial={{ pathLength: 0, opacity: 0.5 }}
-          animate={{ pathLength: 1, opacity: 1 }}
+          animate={{ pathLength: 1, opacity: 1,color:'#366a8d' }}
           transition={transition}
         />
       </svg>

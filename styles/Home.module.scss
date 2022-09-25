@@ -90,6 +90,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 480px) {
+      flex-direction: column;
+    }
   }
   z-index: 30;
   h1 {
@@ -97,12 +100,7 @@
     font-weight: 700;
   }
 }
-.image_div{
-  width: 50%;
-  float: right;
-//   align-self: flex-end;
-//   padding-left: 20%;
- }
+
 .middleSection {
   background-color: white;
   display: flex;
@@ -112,12 +110,15 @@
   text-align: center;
   // padding-left: 10%;
   // box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
-
   // box-shadow: inset 14px 0px  rgba(0, 0, 0, 0.25);
   // box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
   height: 100vh;
   //padding-top: 10%;
   z-index: 20;
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   h2 {
     font-size: 32px;
     margin-bottom: 30px;
@@ -144,10 +145,9 @@
   height: 100vh;
   //padding-left: 5%;
   overflow-x: hidden;
-  // article {
-  //   //margin-right: 15%;
-
-  // }
+  article {
+    margin-right: 15%;
+  }
   h2 {
     font-size: 32px;
     margin-bottom: 30px;
@@ -220,31 +220,48 @@ justify-self: flex-start;
   display: block;
   z-index: 30;
 }
-@media (max-width: 480px) {
-  .firstSection {
-    // display: flex;
-    // flex-direction: column;
-    .div {
-      flex-direction: column;
-    }
-    h1 {
-      font-size: 20px;
-    }
+
+.metamaskSection {
+  flex-direction: column;
+}
+.middleSection_photo {
+  width: 50%;
+  height: 50%;
+  h2 {
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-weight: 500;
   }
-  .middleSection {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .metamaskSection {
-    flex-direction: column;
-  }
-  .middleSection_photo {
-    width: 50%;
-    height: 50%;
-    h2 {
-      font-size: 16px;
-      margin-bottom: 30px;
-      font-weight: 500;
-    }
+}
+.popup_content{
+  width: 160px;
+  height:160px;
+}
+.popup {
+  // visibility: hidden;
+  // width: 160px;
+  top: 10%;
+  color: #555;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 30px;
+  position: absolute;
+  z-index: 100000000000000;
+  // margin-left: -80px;
+}
+.NavButton{
+  border: #ffffff 0.5px solid;
+  border-radius: 28px;
+  font-family: Poppins;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px;
+  margin:0px 15px;
+  // color: #ffffff;
+
+  &:hover {
+    scale: 1.05;
+    transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.3s;
   }
 }

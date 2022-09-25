@@ -7,8 +7,8 @@
   align-items: center;
   .avatar_pic {
     background-color: #fff;
-    // width: 85px;
-    // height: 85px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -77,7 +77,7 @@
   @extend .sidebar_item;
   background: #366a8d;
   border-radius: 41px;
-  padding-left: 20px;
+  // padding-left: 20px;
   @media (max-width: 480px) {
     border-radius: 0;
     div {

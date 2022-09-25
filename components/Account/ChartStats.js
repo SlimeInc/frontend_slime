@@ -2,7 +2,7 @@ import styles from "./Account.module.scss";
 import StatsCard from "./StatsCard";
 import { HiOutlineArrowTrendingDown, HiArrowTrendingUp } from "react-icons/hi";
 const wallet = {
-  ETH: { amt: "27" },
+  BTC: { amt: "27" },
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };
@@ -11,7 +11,7 @@ const ChartStats = ({ cryptoList }) => {
   num = cryptoList.reduce(function (accumulator, asset) {
     return (
       accumulator +
-      Number(asset?.price * wallet[asset.symbol].amt * asset?.change)
+      Number(asset?.price * wallet[asset?.symbol].amt * asset?.change)
     );
   }, 0);
   denum = cryptoList.reduce(function (accumulator, asset) {

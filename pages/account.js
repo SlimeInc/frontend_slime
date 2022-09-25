@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import ChartStats from "../components/Account/ChartStats";
 
 const wallet = {
-  ETH: { amt: "27" },
+  BTC: { amt: "27" },
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };

@@ -1,6 +1,6 @@
 import Connector from "./Connector";
 import styles from "./Exchange.module.scss";
-import { useField , ErrorMessage} from "formik";
+import { useField, ErrorMessage } from "formik";
 /////////////////////////
 const InputSelect = (props) => {
   const [field, meta] = useField(props);

@@ -4,10 +4,14 @@ body {
   margin: 0;
   font-family: Poppins;
   background-color: #f8fafb;
+  scroll-behavior: smooth;
 }
 body {
   position: absolute;
    width: 100vw;
+  /* @media (max-width: 480px) {
+    width: 100%;
+  } */
 }
 h1 {
   font-weight: 600;
@@ -36,6 +40,10 @@ li::marker {
 
 * {
   box-sizing: border-box;
+}
+@media (max-width: 480px) {
+  position: absolute;
+  width: 100vw;
 }
 @media (prefers-color-scheme: dark) {
   html {

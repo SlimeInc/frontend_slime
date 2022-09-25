@@ -2,7 +2,7 @@ import styles from "./Account.module.scss";
 import DropDownItem from "./DropDownItem";
 
 const wallet = {
-  ETH: { amt: "27" },
+  BTC: { amt: "27" },
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };

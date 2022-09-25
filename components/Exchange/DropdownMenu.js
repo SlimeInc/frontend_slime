@@ -3,7 +3,7 @@ import DropDownItem from "./DropDownItem";
 import { useField } from "formik";
 
 const wallet = {
-  ETH: { amt: "27" },
+  BTC: { amt: "27" },
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };

@@ -25,7 +25,7 @@ ChartJS.register(
   Filler
 );
 const wallet = {
-  ETH: { amt: "27" },
+  BTC: { amt: "27" },
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };
@@ -33,10 +33,8 @@ const wallet = {
 export function Chart({ cryptoList }) {
   const label = [];
   const priceTags = [];
-  // let buffer;
   const [dropdown, setdropdown] = useState(false);
-  const [whichCoin, setwhichCoin] = useState(1);
-  // const [scaleCh, setscaleCh] = useState(false);
+  const [whichCoin, setwhichCoin] = useState(0);
 
   console.log(cryptoList);
 
@@ -45,40 +43,8 @@ export function Chart({ cryptoList }) {
     setdropdown(true);
   };
 
-  // const getHistory = (uuid, timePeriod = "24h") => {
-  //   try {
-  //     axios({
-  //       method: "GET",
-  //       url: `https://coinranking1.p.rapidapi.com/coin/${uuid}/history`,
-  //       params: {
-  //         referenceCurrencyUuid: "yhjMzLPhuIDl",
-  //         timePeriod: timePeriod,
-  //       },
-  //       headers: {
-  //         "X-RapidAPI-Key":
-  //           "2c2471d33emshc7b01b1765b7f77p11e8e4jsn188a88417780",
-  //         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-  //       },
-  //     })
-  //       .then((res) => {
-  //         buffer = res?.data?.data?.history;
-  //         console.log(buffer);
-  //         return buffer;
-  //       })
-  //       .then((buffer) => {
-  //         buffer?.map((price) => {
-  //           priceTags.push(price.price);
-  //           label.push(new Date(price.timestamp).toLocaleTimeString());
-  //         });
-  //       })
-  //       .then(() => {
-  //         // setscaleCh(!scaleCh)   hmm....
-  //         window.dispatchEvent(new Event("resize"));
-  //       });
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+
+  
   let timepoint = new Date().getHours();
   let timeString = String(new Date().toLocaleTimeString());
 
