@@ -2,6 +2,18 @@ import styles from "./Sidebar.module.scss";
 import { AiOutlineCopy } from 'react-icons/ai'
 
 const AvatarSection = ({ pic, name }) => {
+
+  const copyWallet = () => {
+    navigator.clipboard.writeText(name).then( () => {
+      alert(`${name} Address copied!`)
+    }
+    )
+    navigator.clipboard.readText().then(text => {
+      console.log("Copied text: ", text)
+    })
+  }
+
+
   return (
     <div className={styles.avatar_section}>
       <div className={styles.avatar_pic}>
