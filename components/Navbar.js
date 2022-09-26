@@ -10,9 +10,12 @@ import { useRouter } from "next/router";
 import { MdMenu } from "react-icons/md";
 import Popup from "./Popup";
 
+import detectEthereumProvider from "@metamask/detect-provider";
+
 function Navbar() {
   const { scrollY, scrollYProgress } = useScroll();
   const router = useRouter();
+  const [pop, setpop] = useState(false);
 
   const {
     connectWallet,
@@ -23,6 +26,28 @@ function Navbar() {
     sendTransaction,
   } = useContext(TransactionContext);
 
+  const IsMetaMaskInstalled = async () => {
+    const provider = await detectEthereumProvider({ mustBeMetaMask: true });
+
+    if (provider) {
+      console.log("Ethereum successfully detected!");
+      router.push("/account");
+      // From now on, this should always be true:
+      // provider === window.ethereum
+
+      // Access the decentralized web!
+
+      // Legacy providers may only have ethereum.sendAsync
+      const chainId = await provider.request({
+        method: "eth_chainId",
+      });
+    } else {
+      // if the provider is not detected, detectEthereumProvider resolves to null
+      // console.error("Please install MetaMask!", error);
+      setpop(true);
+      console.log(pop)
+    }
+  };
   let scroll;
   useEffect(() => {
     scrollY.onChange((latest) => {
@@ -39,13 +64,8 @@ function Navbar() {
         <NavbarItem href="/">Markets</NavbarItem>
         <NavbarItem href="#about-section">About</NavbarItem>
         {!currentAccount && (
-          <button
-            type="button"
-            onClick={() => {
-              connectWallet;
-              router.push("/account");
-            }}
-          >
+          <button type="button" onClick={() => {IsMetaMaskInstalled()}}>
+            {pop && <Popup pop={pop} setpop={setpop} />}
             <p>Login With MetaMask</p>
           </button>
         )}
