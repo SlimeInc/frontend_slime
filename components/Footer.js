@@ -8,14 +8,14 @@ import {
 } from "react-icons/ai";
 function Footer() {
   return (
-    <div>
+    <div className={styles.rear}>
       {" "}
       {
         <section className={styles.footer} id="about-section">
           <div className={styles.wrapper}>
             {/* <div className={styles.div}> */}
             <article className={styles.tristand}>
-              <h3>Follow DigiCrypto </h3>
+              <h3>Join the Family </h3>
 
               <ul className={styles.flexi}>
                 <li>
@@ -38,6 +38,22 @@ function Footer() {
                     <AiFillRedditSquare className={styles.icon} />
                   </a>
                 </li>
+              </ul>
+            </article>
+            <article className={styles.tristand}>
+              <ul className={styles.flexo}>
+              <li>
+                  <a href="#" className={styles.text}>Markets</a>
+                </li>
+                <li>
+                  <a href="#" className={styles.text}>Metamask</a>
+                </li>
+                <li>
+                  <a href="#" className={styles.text}>Charts</a>
+                </li>
+                {/* <li>
+                  <a href="#" className={styles.text}>Charts</a>
+                </li> */}
               </ul>
             </article>
             {/* <article className={styles.Tristand}>

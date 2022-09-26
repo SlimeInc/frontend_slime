@@ -165,6 +165,9 @@ const Home = () => {
           
         </div>
       </section>
+      <div>
+        {/* <hr className={styles.hr}/> */}
+      </div>
       <Footer />
     </div>
   );

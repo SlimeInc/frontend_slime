@@ -69,7 +69,7 @@
   background-image: url("../public/images/shape.png");
   width: 100%;
   // box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
-  min-height: 120vh;
+  min-height: 110vh;
   padding-top: 5%;
   background-size: contain;
   background-repeat: no-repeat;
@@ -91,13 +91,19 @@
     font-weight: 700;
   }
 }
-
+.hr{
+  //color: #ffffff;
+}
 .middleSection {
-  background-color: rgb(31, 165, 168);
+  background: linear-gradient(155.78deg, #141F48 7.38%, #2EAE9F 84.49%);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  //border-top-left-radius: 20%;
+  //border-top-right-radius: 10%;
+  //border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 20%;
   text-align: center;
   // padding-left: 10%;
   // box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.25);
@@ -111,16 +117,17 @@
     flex-direction: column-reverse;
   }
   h2 {
-    color: #2EAE9F;
+    color: #ffffff;
     font-size: 32px;
     margin-bottom: 30px;
     font-weight: 500;
   }
   span {
     display: block;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 15px;
     line-height: 32px;
+    color: rgb(255, 255, 255);
   }
   .middleSection_photo {
     width: 50%;
@@ -161,6 +168,10 @@
   justify-self: flex-start;
 }
 
+.rear{
+  padding-top: 20px;
+  background: linear-gradient(155.78deg,#283564, #141F48 7.38% 84.49%);
+}
 .footer {
   position: relative;
   display: flex;
@@ -168,7 +179,7 @@
   align-items: center;
   width: 100%;
   height: 20vh;
-  background: linear-gradient(155.78deg, #141f48 7.38%, #2eae9f 84.49%);
+  //background-color: #2EAE9F;
   z-index: 10;
   overflow-x: hidden;
   .wrapper {
@@ -180,14 +191,17 @@
   }
   ul {
     list-style: none;
+    color: #fff;
   }
   h3 {
     display: block;
     font-weight: 500;
     font-size: 12px;
     line-height: 32px;
+    color: #fff;
   }
 }
+
 
 .space {
   position: absolute;
@@ -246,15 +260,20 @@
   width: 100%;
   height: 70vh;
   display: flex;
+  border-top: 10px #141f48;
+  border-top-left-radius: 20%;
+  //border-top-right-radius: -20%;
   flex-direction: column;
   justify-content: space-between;
+  background: linear-gradient(155.78deg, #141F48 7.38%, #2EAE9F 84.49%);
   align-items: center;
-  padding-bottom: 10px;
+  padding-top: 10px;
+  z-index: 50;
   // border: 1px solid rgb(17, 14, 14);
   h2 {
     display: block;
     height: 20%;
-    color: #2EAE9F;
+    color: #ffffff;
   }
   .teamGallery {
     display: flex;
@@ -307,11 +326,11 @@
       font-weight: bold;
       font-size: 1.7rem;
       text-align: center;
-      color: #2EAE9F;
+      color: #141f48;
     }
     span {
       display: block;
-      color: #2EAE9F;
+      color: #141f48;
       font-weight: bold;
       font-size: 1.2rem;
       letter-spacing: 1px;
