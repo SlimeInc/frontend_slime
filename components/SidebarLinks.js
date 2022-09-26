@@ -14,6 +14,7 @@ const SidebarLinks = () => {
       <SidebarItem href="/transactions">
         <MdOutlineHistory/> <span>History</span>
       </SidebarItem>
+      <SidebarItem href="/market">Market</SidebarItem>
     </div>
   );
 };
