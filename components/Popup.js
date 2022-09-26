@@ -1,7 +1,7 @@
 import styles from "../styles/Home.module.scss";
 import detectEthereumProvider from "@metamask/detect-provider";
 
-const Popup = ({ pop, setpop }) => {
+const Popup = ({ setpop }) => {
   const IsMetaMaskInstalled = async () => {
     const provider = await detectEthereumProvider({ mustBeMetaMask: true });
     if (provider) {
