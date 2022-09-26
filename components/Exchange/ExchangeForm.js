@@ -28,7 +28,6 @@ const ExchangeForm = () => {
 
     sendTransaction()
   }
-  console.log("Current wallet: ",currentAccount)
 
   return (
     <div  className={styles.exchange_form}>
