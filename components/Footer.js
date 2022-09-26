@@ -1,42 +1,46 @@
 import React from "react";
 import styles from "../styles/Home.module.scss";
-
+import {
+  AiOutlineFacebook,
+  AiFillTwitterSquare,
+  AiOutlineInstagram,
+  AiFillRedditSquare,
+} from "react-icons/ai";
 function Footer() {
   return (
     <div>
       {" "}
       {
-        <section className={styles.rearSection} id="about-section">
-          {/* <div className={styles.space}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-              <path
-                fill="#fff"
-                fill-opacity="1"
-                d="M0,192L120,176C240,160,480,128,720,128C960,128,1200,160,1320,176L1440,192L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
-              ></path>
-            </svg>
-          </div>{" "} */}
-          <div className={styles.div}>
-            <article className={styles.Tristand}>
-              {" "}
-              <h2>
-                Follow
-                <span>
-                  <ul>
-                    <li>
-                      <a href="#">Twitter</a>
-                    </li>
-                    <li>
-                      <a href="#">Instagram</a>
-                    </li>
-                    <li>
-                      <a href="#">Facebook</a>
-                    </li>
-                  </ul>
-                </span>
-              </h2>
+        <section className={styles.footer} id="about-section">
+          <div className={styles.wrapper}>
+            {/* <div className={styles.div}> */}
+            <article className={styles.tristand}>
+              <h3>Follow DigiCrypto </h3>
+
+              <ul className={styles.flexi}>
+                <li>
+                  <a href="#">
+                    <AiFillTwitterSquare className={styles.icon} />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <AiOutlineInstagram className={styles.icon} />{" "}
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <AiOutlineFacebook className={styles.icon} />
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <AiFillRedditSquare className={styles.icon} />
+                  </a>
+                </li>
+              </ul>
             </article>
-            <article className={styles.Tristand}>
+            {/* <article className={styles.Tristand}>
               {" "}
               <h2>
                 Features
@@ -54,28 +58,25 @@ function Footer() {
                   </ul>
                 </span>
               </h2>
-            </article>
+            </article> */}
 
-            <article className={styles.Tristand}>
-              {" "}
-              <h2>
-                Help
-                <span>
-                  <ul>
-                    <li>
-                      <a href="#">FAQ</a>
-                    </li>
-                    <li>
-                      <a href="#">Wallet</a>
-                    </li>
-                    <li>
-                      <a href="#">Charts</a>
-                    </li>
-                  </ul>
-                </span>
-              </h2>
+            <article className={styles.tristand}>
+              <ul className={styles.flexo}>
+              <li>
+                  <a href="#" className={styles.text}>HELP</a>
+                </li>
+                <li>
+                  <a href="#" className={styles.text}>FAQ</a>
+                </li>
+                <li>
+                  <a href="#" className={styles.text}>Wallet</a>
+                </li>
+                {/* <li>
+                  <a href="#" className={styles.text}>Charts</a>
+                </li> */}
+              </ul>
             </article>
-            <article className={styles.Tristand}>
+            {/* <article className={styles.Tristand}>
               {" "}
               <h2 className={styles.Text}>
                 DigiCrypto
@@ -85,7 +86,8 @@ function Footer() {
                   however you want it.
                 </span>
               </h2>
-            </article>
+            </article> */}
+            {/* </div> */}
           </div>
         </section>
       }
@@ -94,3 +96,4 @@ function Footer() {
 }
 
 export default Footer;
+//  RiFacebookBoxLine
