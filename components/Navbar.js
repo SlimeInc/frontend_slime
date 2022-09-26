@@ -35,8 +35,8 @@ function Navbar() {
     <div className={styles.Navigation}>
       <NavbarItem href="/">DigiCrypto</NavbarItem>
       <ul className={styles.navbar}>
-        <NavbarItem href="/">Exchange</NavbarItem>
-        <NavbarItem href="/">Markets</NavbarItem>
+        {/* <NavbarItem href="/">Exchange</NavbarItem> */}
+        <NavbarItem href="https://coinranking.com/markets">Markets</NavbarItem>
         <NavbarItem href="#about-section">About</NavbarItem>
         {!currentAccount && (
           <button
