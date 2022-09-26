@@ -21,7 +21,7 @@ const AvatarSection = ({ pic, name }) => {
         <img src='images/logos_metamask-icon.png' layout="intrinsic"></img>
       </div>
       <span>Current Wallet:</span>
-      <div className={styles.wallet_div}>
+      <div className={styles.wallet_div} onClick={copyWallet}>
         <span>{name?.slice(1,5)}...{name.slice(name.length-4)}</span>
         <AiOutlineCopy />
       </div>
