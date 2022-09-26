@@ -18,8 +18,16 @@
       height: 40px;
     }
   }
+  .wallet_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wallet_div span {
+    padding-right: 5px;
+  }
   span {
-    display: block;
+    display: flex;
     color: #fff;
     font-weight: 700;
     font-size: 15px;
