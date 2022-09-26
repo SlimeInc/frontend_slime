@@ -35,50 +35,59 @@ const data = {
   address: "sf432543fkjskugsiufidsfioasafs",
   tokens: "Ether",
 };
+
+const datum = {
+  brief: true,
+  amount: "3",
+  date: date.getHours(),
+  receiving: false,
+  address: "sf4sjgksdfidsfioasasdfjdskfs",
+  tokens: "Ether",
+};
 function transactions() {
   const [transType, settransType] = useState({
     all: true,
     received: false,
-    sent: false}
-);
-function ChooseAll() {
-    
-}
-function ChooseNewest() {}
-function ChooseOldest() {}
-function ChooseSent() {}
-function ChooseReceived() {}
-  const [sort, setsort] =useState({oldest:true, newest:false})
+    sent: false,
+  });
+  const dataArr = [data, datum, data, datum, data, datum, data];
+  // function ChooseAll(arr) {
+  //   arr.map((any) => <TransactionCard data={any} />);
+  // }
+  // function ChooseNewest(arr) {}
+  // function ChooseOldest() {}
+  // function ChooseSent(arr) {
+  //   arr.filter((any) => !any.receiving && <TransactionCard data={any} />);
+  // }
+  // function ChooseReceived(arr) {
+  //   arr.filter((any) => any.receiving && <TransactionCard data={any} />);
+  // }
+  function HandleCards(transType, arr) {
+    transType.all && arr?.map((any) => <TransactionCard data={any} />);
+
+    transType.sent &&
+      arr?.filter((any) => !any.receiving && <TransactionCard data={any} />);
+
+    transType.received &&
+      arr?.filter((any) => any.receiving && <TransactionCard data={any} />);
+  }
+
+  const [sort, setsort] = useState({ oldest: true, newest: false });
   return (
     <>
-      <TransactionHead  transType={transType} settransType={settransType}/>
+      <TransactionHead transType={transType} settransType={settransType} />
       <TransactionsHolder>
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} /> <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
+        {transType.all && dataArr?.map((any) => <TransactionCard data={any} />)}
+
+        {transType.sent &&
+          dataArr?.filter(
+            (any) => !any.receiving && <TransactionCard data={any} />
+          )}
+
+        {transType.received &&
+          dataArr?.filter(
+            (any) => any.receiving && <TransactionCard data={any} />
+          )}
       </TransactionsHolder>
     </>
   );

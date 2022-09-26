@@ -7,6 +7,7 @@ const TransactionCard = ({ data }) => {
   const debit = `You sent ${data.amount}  at  ${data.date}`;
   return (
     <div className={styles.trans_card}>
+      {console.log(data)}
       <div className={styles.dir}>
         {data.receiving ? (
           <FaArrowCircleDown color="green" size={20} />

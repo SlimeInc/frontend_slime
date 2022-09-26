@@ -17,14 +17,16 @@ const TransactionHead = ({ transType, settransType }) => {
       <div className={styles.sort_div}>
         <motion.div
           className={styles.toggle_coin}
-          onClick={() =>
-            settransType({ received: false, sent: false, all: true })
-          }
-          // style={{
-          //   color: props.transType["all"] ? ": #366a8d" : "#fff",
-          //   opacity: IsInview ? 1 : 0,
-          //   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-          // }}
+          onClick={() => {
+            console.log(transType.all);
+            settransType({ received: false, sent: false, all: true });
+          }}
+          style={{
+            backgroundColor: transType.all ? "#366a8d" : "#fff",
+            color: transType.all ? "#fff" : "#817f7f",
+
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
         >
           All
         </motion.div>
@@ -33,6 +35,12 @@ const TransactionHead = ({ transType, settransType }) => {
           onClick={() =>
             settransType({ sent: false, all: false, received: true })
           }
+          style={{
+            backgroundColor: transType.received ? "#366a8d" : "#fff",
+            color: transType.received ? "#fff" : "#817f7f",
+
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
         >
           Received
         </motion.div>
@@ -41,6 +49,12 @@ const TransactionHead = ({ transType, settransType }) => {
           onClick={() =>
             settransType({ received: false, all: false, sent: true })
           }
+          style={{
+            backgroundColor: transType.sent ? "#366a8d" : "#fff",
+            color: transType.sent ? "#fff" : "#817f7f",
+
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
         >
           Sent
         </motion.div>
