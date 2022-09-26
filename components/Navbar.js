@@ -45,7 +45,7 @@ function Navbar() {
       // if the provider is not detected, detectEthereumProvider resolves to null
       // console.error("Please install MetaMask!", error);
       setpop(true);
-      console.log(pop)
+      console.log(pop);
     }
   };
   let scroll;
@@ -64,8 +64,20 @@ function Navbar() {
         <NavbarItem href="/">Markets</NavbarItem>
         <NavbarItem href="#about-section">About</NavbarItem>
         {!currentAccount && (
-          <button type="button" onClick={() => {IsMetaMaskInstalled()}}>
-            {pop && <Popup pop={pop} setpop={setpop} />}
+          <button
+            type="button"
+            onClick={() => {
+              IsMetaMaskInstalled();
+            }}
+          >
+            {pop && (
+              <div
+                onClick={() => setpop(false)}
+                className={styles.popup_content}
+              >
+                <Popup pop={pop} setpop={setpop} />
+              </div>
+            )}{" "}
             <p>Login With MetaMask</p>
           </button>
         )}
