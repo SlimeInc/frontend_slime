@@ -23,6 +23,9 @@
     align-items: center;
     justify-content: space-between;
   }
+  .wallet_div:hover {
+    cursor: pointer;
+  }
   .wallet_div span {
     padding-right: 5px;
   }
