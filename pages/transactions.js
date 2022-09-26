@@ -51,17 +51,9 @@ function transactions() {
     sent: false,
   });
   const dataArr = [data, datum, data, datum, data, datum, data];
-  // function ChooseAll(arr) {
-  //   arr.map((any) => <TransactionCard data={any} />);
-  // }
-  // function ChooseNewest(arr) {}
-  // function ChooseOldest() {}
-  // function ChooseSent(arr) {
-  //   arr.filter((any) => !any.receiving && <TransactionCard data={any} />);
-  // }
-  // function ChooseReceived(arr) {
-  //   arr.filter((any) => any.receiving && <TransactionCard data={any} />);
-  // }
+  const Search = (keyword , arr)=>{
+  
+  }
   function HandleCards(transType, arr) {
     transType.all && arr?.map((any) => <TransactionCard data={any} />);
 
@@ -77,15 +69,16 @@ function transactions() {
     <>
       <TransactionHead transType={transType} settransType={settransType} />
       <TransactionsHolder>
+
         {transType.all && dataArr?.map((any) => <TransactionCard data={any} />)}
 
         {transType.sent &&
-          dataArr?.filter(
+          dataArr?.map(
             (any) => !any.receiving && <TransactionCard data={any} />
           )}
 
         {transType.received &&
-          dataArr?.filter(
+          dataArr?.map(
             (any) => any.receiving && <TransactionCard data={any} />
           )}
       </TransactionsHolder>

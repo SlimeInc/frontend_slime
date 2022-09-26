@@ -24,22 +24,21 @@ const TransactionHead = ({ transType, settransType }) => {
           style={{
             backgroundColor: transType.all ? "#366a8d" : "#fff",
             color: transType.all ? "#fff" : "#817f7f",
-
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1) ",
           }}
         >
           All
         </motion.div>
         <motion.div
           className={styles.toggle_coin}
-          onClick={() =>
-            settransType({ sent: false, all: false, received: true })
-          }
+          onClick={() => {
+            settransType({ sent: false, all: false, received: true });
+          }}
           style={{
             backgroundColor: transType.received ? "#366a8d" : "#fff",
             color: transType.received ? "#fff" : "#817f7f",
 
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1)",
           }}
         >
           Received
@@ -53,7 +52,7 @@ const TransactionHead = ({ transType, settransType }) => {
             backgroundColor: transType.sent ? "#366a8d" : "#fff",
             color: transType.sent ? "#fff" : "#817f7f",
 
-            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+            transition: "all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1)",
           }}
         >
           Sent

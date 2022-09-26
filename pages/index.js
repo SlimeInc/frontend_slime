@@ -173,53 +173,5 @@ const Home = () => {
   );
 };
 
-// This gets called on every request
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(url, {
-//     method: "GET",
-// params: {
-//   referenceCurrencyUuid: "yhjMzLPhuIDl",
-//   timePeriod: "24h",
-//   "tiers[0]": "1",
-//   orderBy: "marketCap",
-//   orderDirection: "desc",
-//   limit: "20",
-//   offset: "0",
-// },
-//     headers: {
-//       "X-RapidAPI-Key": "2c2471d33emshc7b01b1765b7f77p11e8e4jsn188a88417780",
-//       "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-//     },
-//   });
-//   const cryptos = await res.json();
-//   // const cryptos = await data.data.coins
-//   console.log(cryptos.data.coins);
-//   // Pass data to the page via props
-//   return { props: { cryptos } || { cryptos: `czechoslav` } };
-
-//   console.log(`are we there yet `);
-// }
 export default Home;
 
-// useEffect(() => {
-//   axios({
-//     method: "get",
-//     url: url,
-//     headers: {
-//       "X-RapidAPI-Key": "2c2471d33emshc7b01b1765b7f77p11e8e4jsn188a88417780",
-//       "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-//     },
-//   })
-//     .then((res) => {
-//       cryptos = res.data.data.coins;
-//       return cryptos;
-//     })
-//     .then((cryptos) => {
-//       cryptos.filter(function (crypto) {
-//         if (wallet.hasOwnProperty(crypto.symbol)) {
-//           setcryptoList((arr) => [...arr, crypto]);
-//         }
-//       });
-//     });
-// }, []);

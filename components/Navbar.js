@@ -35,7 +35,6 @@ function Navbar() {
                 <button
                     type="button"
                     onClick={connectWallet}
-
                 >
                     <p>Login With MetaMask</p>
                 </button>
