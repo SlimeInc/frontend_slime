@@ -7,9 +7,9 @@ const TeamSection = () => {
     <div className={styles.TeamSection}>
 <h2> Meet Our team</h2>
 <div className={styles.teamGallery}>
-<TeamMember name='Kofi' src='/images/Kofi.jpg'/>
-<TeamMember name='Osae' />
-<TeamMember name='Biney'/>
+<TeamMember name='Kofi' src='/images/Kofi.jpg' about='Project Manager'/>
+<TeamMember name='Biney' src='/images/Biney.jpg' about='Frontend Developer'/>
+<TeamMember name='Osae' src='/images/Osae.jpg' about='Backend Developer'/>
 
 </div>
     </div>

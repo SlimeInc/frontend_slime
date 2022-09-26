@@ -89,6 +89,7 @@ const Home = () => {
       <Carousel data={cryptos} className={styles.carousel} />
 
       <section className={styles.middleSection}>
+        
         <div className={styles.wrapper}>
           <MiddleSection />
           <article
@@ -157,7 +158,7 @@ const Home = () => {
           </article>
         </div>
       </section>
-      <section className={styles.metamaskSection}>
+      <section className={styles.TeamSection}>
         <div className={styles.wrapper}>
           {" "}
           <TeamSection />
