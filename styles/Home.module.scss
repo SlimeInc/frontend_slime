@@ -91,16 +91,24 @@
     font-weight: 700;
   }
 }
-.hr{
-  //color: #ffffff;
+.trendingCoins{
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-bottom: 10px;
+  color: #2EAE9F;
+  text-decoration: underline;
 }
+// .hr{
+//   //color: #ffffff;
+// }
 .middleSection {
   background: linear-gradient(155.78deg, #141F48 7.38%, #2EAE9F 84.49%);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  //border-top-left-radius: 20%;
+  border-top-left-radius: 10%;
   //border-top-right-radius: 10%;
   //border-bottom-left-radius: 10%;
   border-bottom-right-radius: 20%;

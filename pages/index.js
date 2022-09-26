@@ -86,6 +86,9 @@ const Home = () => {
           
         </div>
       </section>
+      <h2 className={styles.trendingCoins}>
+        Trending Coins
+      </h2>
       <Carousel data={cryptos} className={styles.carousel} />
 
       <section className={styles.middleSection}>
@@ -153,7 +156,9 @@ const Home = () => {
               </span>
             </h2>
             <button className={styles.GetStartedButton}>
-              Join the DigiCrypto Family
+              <a href="https://docs.metamask.io/guide">
+              Learn about Metamask
+              </a>
             </button>
           </article>
         </div>
