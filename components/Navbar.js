@@ -27,7 +27,7 @@ function Navbar() {
   return (
     <div className={styles.Navigation}>
       <NavbarItem href="/">DigiCrypto</NavbarItem>
-      <ul>
+      <ul className={styles.navbar}>
         <NavbarItem href="/">Exchange</NavbarItem>
         <NavbarItem href="/">Markets</NavbarItem>
         <NavbarItem href="#about-section">About</NavbarItem>

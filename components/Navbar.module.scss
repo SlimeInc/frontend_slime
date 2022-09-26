@@ -1,3 +1,7 @@
+.navbar__item {
+  padding: 0 20px;
+  margin: auto;
+}
 .Navigation,
 .scrolling {
   position: sticky;
@@ -14,7 +18,7 @@
   align-items: center;
   justify-content: center;
   //background-color: #5a1017;
-  background: linear-gradient(155.78deg, #141F48 7.38%, #2EAE9F 84.49%);
+  background: linear-gradient(155.78deg, #141f48 7.38%, #2eae9f 84.49%);
   color: #ffffff;
   .nav {
     width: 65%;
@@ -30,10 +34,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    .navbar__item {
-      padding: 0 20px;
-      margin: auto;
-    }
   }
 }
 .navbar__menu {
@@ -59,7 +59,6 @@
     scale: 1.01;
     transition: all cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.3s;
   }
-  
 }
 
 @media (max-width: 480px) {
@@ -81,7 +80,7 @@
     font-size: 2em;
   }
 }
-.popup_content{
-display: block;
-width: 400px;
+.popup_content {
+  display: block;
+  width: 400px;
 }

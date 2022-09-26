@@ -13,3 +13,20 @@
   justify-content: space-between;
   background: beige;
 }
+.just_digi {
+  position: fixed;
+  height: 40px;
+  width: 100%;
+  z-index: 456;
+  top: 0;
+  left: 0;
+  background: linear-gradient(155.78deg, #141f48 7.38%, #2eae9f 84.49%);
+  color: #ffffff;
+  padding-left: 5%;
+  padding-top: 7px;
+
+  a {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+}

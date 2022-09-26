@@ -9,7 +9,7 @@ const SidebarLinks = () => {
         <MdSwitchAccount /> <span>Account</span>
       </SidebarItem>
       <SidebarItem href="/exchanges">
-        <GiPayMoney /> <span> Exchange</span>
+        <GiPayMoney /> <span>Transfer</span>
       </SidebarItem>
       <SidebarItem href="/transactions">
         <MdOutlineHistory/> <span>History</span>

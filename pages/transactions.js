@@ -41,11 +41,17 @@ function transactions() {
     received: false,
     sent: false}
 );
-
+function ChooseAll() {
+    
+}
+function ChooseNewest() {}
+function ChooseOldest() {}
+function ChooseSent() {}
+function ChooseReceived() {}
   const [sort, setsort] =useState({oldest:true, newest:false})
   return (
     <>
-      <TransactionHead />
+      <TransactionHead  transType={transType} settransType={settransType}/>
       <TransactionsHolder>
         <TransactionCard data={data} />
         <TransactionCard data={data} />

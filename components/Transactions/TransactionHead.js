@@ -1,12 +1,8 @@
 import styles from "./Transactions.module.scss";
 import { VscSearch } from "react-icons/vsc";
+import { motion } from "framer-motion";
 
-const TransactionHead = () => {
-  function ChooseAll() {}
-  function ChooseNewest() {}
-  function ChooseOldest() {}
-  function ChooseSent() {}
-  function ChooseReceived() {}
+const TransactionHead = ({ transType, settransType }) => {
   return (
     <div className={styles.trans_head}>
       <form className={styles.trans_form}>
@@ -19,19 +15,39 @@ const TransactionHead = () => {
       </form>
 
       <div className={styles.sort_div}>
-        <div className={styles.toggle_coin} onClick={ChooseAll}>
+        <motion.div
+          className={styles.toggle_coin}
+          onClick={() =>
+            settransType({ received: false, sent: false, all: true })
+          }
+          // style={{
+          //   color: props.transType["all"] ? ": #366a8d" : "#fff",
+          //   opacity: IsInview ? 1 : 0,
+          //   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          // }}
+        >
           All
-        </div>
-        <div className={styles.toggle_coin} onClick={ChooseReceived}>
+        </motion.div>
+        <motion.div
+          className={styles.toggle_coin}
+          onClick={() =>
+            settransType({ sent: false, all: false, received: true })
+          }
+        >
           Received
-        </div>
-        <div className={styles.toggle_coin} onClick={ChooseSent}>
+        </motion.div>
+        <motion.div
+          className={styles.toggle_coin}
+          onClick={() =>
+            settransType({ received: false, all: false, sent: true })
+          }
+        >
           Sent
-        </div>
-        <div className={styles.toggle_coin} onClick={ChooseOldest}>
+        </motion.div>
+        <div className={styles.toggle_coin} onClick={() => settransType}>
           Oldest
         </div>
-        <div className={styles.toggle_coin} onClick={ChooseNewest}>
+        <div className={styles.toggle_coin} onClick={() => settransType}>
           Newest
         </div>
       </div>

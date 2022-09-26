@@ -3,92 +3,101 @@ import React, { useState, useEffect, useContext } from "react";
 import { TransactionContext } from "../../context/TransactionContext";
 import styles from "./Exchange.module.scss";
 
-
 const Input = ({ placeholder, name, type, value, handleChange }) => (
-  <input
-    placeholder={placeholder}
-    type={type}
-    step="0.0001"
-    value={value}
-    onChange={(e) => handleChange(e, name)}
-    className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism"
-  />
+  <div className={styles.input_field_div}>
+    <input
+      // placeholder={placeholder}
+      type={type}
+      step="0.0001"
+      value={value}
+      onChange={(e) => handleChange(e, name)}
+    />
+    <span className={styles.floating_label}> {placeholder}</span>
+  </div>
 );
 
-
 const ExchangeForm = () => {
-  const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction } = useContext(TransactionContext)
-  
+  const {
+    connectWallet,
+    currentAccount,
+    formData,
+    setFormData,
+    handleChange,
+    sendTransaction,
+  } = useContext(TransactionContext);
+
   const handleSubmit = (e) => {
-    const { addressTo, amount, keyword, message } = formData
-    
-    e.preventDefault() //prevent auto-refresh after submission
+    const { addressTo, amount, keyword, message } = formData;
+
+    e.preventDefault(); //prevent auto-refresh after submission
 
     if (!addressTo || !amount || !keyword || !message) return;
 
-    sendTransaction()
-  }
-  console.log("Current wallet: ",currentAccount)
+    sendTransaction();
+  };
+  console.log("Current wallet: ", currentAccount);
 
   return (
-    <div  className={styles.exchange_form}>
-      <Input 
-        placeholder="Address To" 
-        name="addressTo" 
-        type="text" 
-        handleChange={handleChange} 
-        className={styles.input_fields}
-      />
-      <Input 
-        placeholder="Amount (Eth)" 
-        name="amount" 
-        type="number" 
-        handleChange={handleChange} 
-      />
-      <Input 
-        placeholder="Keyword" 
-        name="keyword" 
-        type="text" 
-        handleChange={handleChange} 
-      />
-      <Input 
-        placeholder="Enter Message" 
-        name="message" 
-        type="text" 
-        handleChange={handleChange} 
-      />
-                
+    <div className={styles.exchange_form}>
+      <form>
+      <h3>Transfer tokens </h3>
+        <Input
+          placeholder="Address To"
+          name="addressTo"
+          type="text"
+          handleChange={handleChange}
+        />
+        <Input
+          placeholder="Amount (Eth)"
+          name="amount"
+          type="text"
+          handleChange={handleChange}
+        />
+        {/* <Input
+          placeholder="Keyword"
+          name="keyword"
+          type="text"
+          handleChange={handleChange}
+        /> */}
+        <Input
+          placeholder="Enter Message"
+          name="message"
+          type="text"
+          handleChange={handleChange}
+        />
 
-      <div>
+        <div>
           {false ? (
-              <Loader></Loader>
+            <Loader></Loader>
           ) : (
-              <button
-                  type="button"
-                  onClick={handleSubmit}
-              >
-                  SEND
-              </button>
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className={styles.send}
+            >
+              SEND
+            </button>
           )}
-      </div>
+        </div>
+      </form>
     </div>
   );
 };
 
 // export default ExchangeForm;
 
-import styles from "./Exchange.module.scss";
-import InputField from "./InputField";
-import { useState, useEffect } from "react";
-import { Formik, Form } from "formik";
-import * as Yup from "yup";
-import InputSelect from "./InputSelect";
+// import styles from "./Exchange.module.scss";
+// import InputField from "./InputField";
+// import { useState, useEffect } from "react";
+// import { Formik, Form } from "formik";
+// import * as Yup from "yup";
+// import InputSelect from "./InputSelect";
 
-const wallet = {
-  BTC: { amt: "27" },
-  USDT: { amt: "27567" },
-  SOL: { amt: "34" },
-};
+// const wallet = {
+//   BTC: { amt: "27" },
+//   USDT: { amt: "27567" },
+//   SOL: { amt: "34" },
+// };
 
 // const ExchangeForm = () => {
 //   const [field, showField] = useState({
