@@ -45,32 +45,47 @@ const datum = {
   tokens: "Ether",
 };
 function transactions() {
+  const [search, setsearch] = useState("");
   const [transType, settransType] = useState({
     all: true,
     received: false,
     sent: false,
   });
+  function selector(keyword, any) {
+    if (keyword) {
+      return <TransactionCard data={any} />;
+    } else {
+      return any.address == keyword && <TransactionCard data={any} />;
+    }
+  }
+
   const dataArr = [data, datum, data, datum, data, datum, data];
-  const Search = (keyword , arr)=>{
-  
-  }
-  function HandleCards(transType, arr) {
-    transType.all && arr?.map((any) => <TransactionCard data={any} />);
+  const Search = (keyword, arr) => {
+    return arr.map((any) => selector(keyword, any));
+  };
+  // function HandleCards(transType, arr) {
+  //   transType.all && arr?.map((any) => <TransactionCard data={any} />);
 
-    transType.sent &&
-      arr?.filter((any) => !any.receiving && <TransactionCard data={any} />);
+  //   transType.sent &&
+  //     arr?.filter((any) => !any.receiving && <TransactionCard data={any} />);
 
-    transType.received &&
-      arr?.filter((any) => any.receiving && <TransactionCard data={any} />);
-  }
+  //   transType.received &&
+  //     arr?.filter((any) => any.receiving && <TransactionCard data={any} />);
+  // }
 
   const [sort, setsort] = useState({ oldest: true, newest: false });
   return (
     <>
-      <TransactionHead transType={transType} settransType={settransType} />
+      <TransactionHead
+        transType={transType}
+        settransType={settransType}
+        search={search}
+        setsearch={setsearch}
+      />
       <TransactionsHolder>
-
-        {transType.all && dataArr?.map((any) => <TransactionCard data={any} />)}
+        {console.log(Search(search, dataArr))}
+        {transType.all &&
+          Search(search, dataArr)?.map((any) => <TransactionCard data={any} />)}
 
         {transType.sent &&
           dataArr?.map(

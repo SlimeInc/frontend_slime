@@ -2,12 +2,21 @@ import styles from "./Transactions.module.scss";
 import { VscSearch } from "react-icons/vsc";
 import { motion } from "framer-motion";
 
-const TransactionHead = ({ transType, settransType }) => {
+const TransactionHead = ({ transType, settransType, search, setsearch }) => {
   return (
     <div className={styles.trans_head}>
       <form className={styles.trans_form}>
         {" "}
-        <input type="search" placeholder="Search Address" />
+        <input
+          type="search"
+          placeholder="Search Address"
+          value={search}
+          onChange={(e) => {
+            setsearch(e.target.value);
+            console.log(search);
+
+          }}
+        />
         <button>
           {" "}
           <VscSearch />
