@@ -43,10 +43,10 @@ function Footer() {
             <article className={styles.tristand}>
               <ul className={styles.flexo}>
               <li>
-                  <a href="#" className={styles.text}>Markets</a>
+                  <a href="https://coinranking.com/markets" className={styles.text}>Markets</a>
                 </li>
                 <li>
-                  <a href="#" className={styles.text}>Metamask</a>
+                  <a href="https://docs.metamask.io/guide" className={styles.text}>Metamask</a>
                 </li>
                 <li>
                   <a href="#" className={styles.text}>Charts</a>
