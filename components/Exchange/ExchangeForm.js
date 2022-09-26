@@ -28,6 +28,7 @@ const ExchangeForm = () => {
 
     sendTransaction()
   }
+  console.log("current account: ", currentAccount)
 
   return (
     <div  className={styles.exchange_form}>
