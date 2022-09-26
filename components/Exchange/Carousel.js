@@ -15,9 +15,9 @@ const Carousel = (slides) => {
       // install Swiper modules
       autoplay={true}
       modules={[A11y, Autoplay, EffectFade]}
-      spaceBetween={50}
-      slidesPerView={9}
-      speed={1}
+      spaceBetween={20}
+      slidesPerView={13}
+      speed={0.2}
       // effect={"fade"}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}

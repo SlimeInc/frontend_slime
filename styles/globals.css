@@ -9,6 +9,8 @@ body {
 body {
   position: absolute;
    width: 100vw;
+   justify-content: center;
+   align-items: center;
   /* @media (max-width: 480px) {
     width: 100%;
   } */

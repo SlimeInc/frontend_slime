@@ -10,7 +10,7 @@ import styles from "../styles/Home.module.scss";
 import Typed from "typed.js";
 import { useRef, useEffect } from "react";
 import Carousel from "../components/Exchange/Carousel";
-import Team from "../components/Team"
+import TeamSection from "../components/Team"
 
 ////////////
 const baseUrl = "https://coinranking1.p.rapidapi.com/";
@@ -89,6 +89,7 @@ const Home = () => {
       <Carousel data={cryptos} className={styles.carousel} />
 
       <section className={styles.middleSection}>
+        
         <div className={styles.wrapper}>
           <MiddleSection />
           <article
@@ -157,30 +158,16 @@ const Home = () => {
           </article>
         </div>
       </section>
-      <section className={styles.metamaskSection}>
+      <section className={styles.TeamSection}>
         <div className={styles.wrapper}>
           {" "}
-          <MetamaskSection />
-          <article
-          >
-            <h2>
-              Metamask
-              <span>All acounts are provided by Metamask.</span>
-            </h2>
-            <h2>
-              Why Metamask?
-              <span>
-                Metamask is a safe and secure wallet that will ensure ease of
-                acess and management of your funds.
-              </span>
-              <span>
-                it backs this up with a user friendly interface to making it
-                quite easy to use.
-              </span>
-            </h2>
-          </article>
+          <TeamSection />
+          
         </div>
       </section>
+      <div>
+        {/* <hr className={styles.hr}/> */}
+      </div>
       <Footer />
     </div>
   );
