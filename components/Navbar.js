@@ -12,9 +12,16 @@ import Popup from "./Popup";
 
 function Navbar() {
   const { scrollY, scrollYProgress } = useScroll();
+  const router = useRouter();
 
-  const { connectWallet, currentAccount, formData, setFormData, handleChange, sendTransaction } = useContext(TransactionContext)
-
+  const {
+    connectWallet,
+    currentAccount,
+    formData,
+    setFormData,
+    handleChange,
+    sendTransaction,
+  } = useContext(TransactionContext);
 
   let scroll;
   useEffect(() => {
@@ -32,13 +39,16 @@ function Navbar() {
         <NavbarItem href="/">Markets</NavbarItem>
         <NavbarItem href="#about-section">About</NavbarItem>
         {!currentAccount && (
-                <button
-                    type="button"
-                    onClick={connectWallet}
-                >
-                    <p>Login With MetaMask</p>
-                </button>
-            )}
+          <button
+            type="button"
+            onClick={() => {
+              connectWallet;
+              router.push("/account");
+            }}
+          >
+            <p>Login With MetaMask</p>
+          </button>
+        )}
       </ul>
     </div>
   );
