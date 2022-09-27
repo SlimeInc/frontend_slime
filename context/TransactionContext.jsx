@@ -155,6 +155,17 @@ export const TransactionProvider = ({ children }) => {
         }
     }
 
+    const walletDetails = async () => {
+        try {
+            const balance = await ethereum.request({ method: 'eth_getBalance', params: [currentAccount, 'latest']})
+            const parsedBalance = ethers.utils.formatEther(balance)
+            console.log("Wallet Balance: ", parsedBalance)
+        } catch (error) {
+            console.log("Wallet details error: ", error)
+        }
+    }
+    walletDetails()
+
     //this runs only at the start of the program
     useEffect(() => {
         checkForWalletConnection();
