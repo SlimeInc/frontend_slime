@@ -8,7 +8,7 @@ import ItemDollar from "./ItemDollar";
 const AccountRow = ({ coin,wallet }) => {
   return (
     <motion.div className={styles.assets_row}>
-      <ItemIcon coin_icon_url={coin.iconUrl} coin_name={coin.name} />
+      <ItemIcon coin_icon_url={coin.iconUrl} coin_name={coin.name} coin_link={coin.coinrankingUrl}/>
       <AccountItem wallet={wallet} />
       <ItemChange value={coin.change}/>
       <ItemDollar wallet={coin.price} />
