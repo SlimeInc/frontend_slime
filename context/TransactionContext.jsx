@@ -79,7 +79,7 @@ export const TransactionProvider = ({ children }) => {
                 console.alert("No accounts found")
                 throw new Error("No ethereum object")
             }
-            console.log(accountsAvailable)
+            console.log("Accts available: ", accountsAvailable)
             
         } catch (error) {
             console.log(error)
