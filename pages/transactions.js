@@ -32,7 +32,7 @@ const data = {
   amount: "3",
   date: date.getHours(),
   receiving: true,
-  address: "sf432543fkjskugsiufidsfioasafs",
+  address: "afs",
   tokens: "Ether",
 };
 
@@ -41,7 +41,7 @@ const datum = {
   amount: "3",
   date: date.getHours(),
   receiving: false,
-  address: "sf4sjgksdfidsfioasasdfjdskfs",
+  address: "sf4ss",
   tokens: "Ether",
 };
 function transactions() {
@@ -51,18 +51,13 @@ function transactions() {
     received: false,
     sent: false,
   });
-  function selector(keyword, any) {
-    if (keyword) {
-      return <TransactionCard data={any} />;
-    } else {
-      return any.address == keyword && <TransactionCard data={any} />;
-    }
-  }
+  // function selector(search, any) {
+  //     return any.address == search && <TransactionCard data={any} />;
+  //   }
+  // }
 
   const dataArr = [data, datum, data, datum, data, datum, data];
-  const Search = (keyword, arr) => {
-    return arr.map((any) => selector(keyword, any));
-  };
+
   // function HandleCards(transType, arr) {
   //   transType.all && arr?.map((any) => <TransactionCard data={any} />);
 
@@ -83,9 +78,14 @@ function transactions() {
         setsearch={setsearch}
       />
       <TransactionsHolder>
-        {console.log(Search(search, dataArr))}
-        {transType.all &&
-          Search(search, dataArr)?.map((any) => <TransactionCard data={any} />)}
+        {/* {console.log(Search(search, dataArr))} */}
+        {search == ""
+          ? transType.all &&
+            dataArr.map((any) => <TransactionCard data={any} />)
+          : transType.all &&
+            dataArr
+              .filter((any) => any.address === search)
+              ?.map((any) => <TransactionCard data={any} />)}
 
         {transType.sent &&
           dataArr?.map(
