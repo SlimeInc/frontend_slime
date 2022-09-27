@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 
 import styles from "./Navbar.module.scss";
 
-import { TransactionContext } from "../context/TransactionContext";
 import NavbarItem from "./NavbarItem";
 import { useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -16,14 +15,6 @@ function Navbar() {
   const router = useRouter();
   const [pop, setpop] = useState(false);
 
-  const {
-    connectWallet,
-    currentAccount,
-    formData,
-    setFormData,
-    handleChange,
-    sendTransaction,
-  } = useContext(TransactionContext);
 
   const IsMetaMaskInstalled = async () => {
     const provider = await detectEthereumProvider({ mustBeMetaMask: true });
@@ -49,13 +40,8 @@ function Navbar() {
       console.log(pop);
     }
   };
-  let scroll;
-  useEffect(() => {
-    scrollY.onChange((latest) => {
-      scroll = latest;
-      console.log(scroll);
-    });
-  }, []);
+
+  
 
   return (
     <div className={styles.Navigation}>
