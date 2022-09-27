@@ -9,16 +9,27 @@ import { useContext } from "react";
 
 
 
-const TransactionsFrame = ({ addressTo, addressFrom, timestamp, message, keyword, amount, url }) => {
+const TransactionsFrame = ({ addressTo, addressFrom, timestamp, message, amount }) => {
+  
   return (
     <div>
       <div>
         <a href={`https://goerli.etherscan.io/address/${addressFrom}`} target="_blank" rel="noreferrer">
-            <p className="text-white text-base">From: {addressFrom}</p>
+            <p className="">From: {addressFrom}</p>
         </a>
         <a href={`https://goerli.etherscan.io/address/${addressTo}`} target="_blank" rel="noreferrer">
-          <p className="text-white text-base">To: {addressTo}</p>
+          <p className="">To: {addressTo}</p>
         </a>
+        <p>Amount: {amount} Eth</p>
+        {message && 
+          <>
+            <br />
+            <p>Message: {message}</p>
+          </>
+        }
+      </div>
+      <div>
+        <p>{timestamp}</p>
       </div>
     </div>
   )
@@ -32,7 +43,7 @@ function Transactions() {
   return (
     <div className={styles.all_txt}>
       {currentAccount ? (
-        <h3>Recent Transactions</h3>
+        <h3>All Recent Transactions</h3>
       ) : (
         <h3>Connect to Metamask to see your recent transactions.</h3>
       )}
