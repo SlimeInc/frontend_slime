@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { MdMenu } from "react-icons/md";
 import Popup from "./Popup";
-
 import detectEthereumProvider from "@metamask/detect-provider";
 
 function Navbar() {
@@ -31,7 +30,6 @@ function Navbar() {
 
     if (provider) {
       console.log("Ethereum successfully detected!");
-      router.push("/account");
       // From now on, this should always be true:
       // provider === window.ethereum
 
@@ -42,9 +40,11 @@ function Navbar() {
         method: "eth_requestAccounts",
       });
       const account = accounts[0];
+      router.push("/account");
     } else {
       // if the provider is not detected, detectEthereumProvider resolves to null
       // console.error("Please install MetaMask!", error);
+      console.log(`wasn't successful`);
       setpop(true);
       console.log(pop);
     }
@@ -64,7 +64,6 @@ function Navbar() {
         {/* <NavbarItem href="/">Exchange</NavbarItem> */}
         <NavbarItem href="https://coinranking.com/markets">Markets</NavbarItem>
         <NavbarItem href="#about-section">About</NavbarItem>
-        {!currentAccount && (
           <button
             type="button"
             onClick={() => {
@@ -81,7 +80,7 @@ function Navbar() {
             )}{" "}
             <p>Login With MetaMask</p>
           </button>
-        )}
+        
       </ul>
     </div>
   );
