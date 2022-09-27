@@ -153,8 +153,7 @@ export const TransactionProvider = ({ children }) => {
             window.location.reload()
 
         } catch (error) {
-            console.log(error)
-            throw new Error("No ethereum object")
+            console.log("Send Transaction error: ", error)
         }
     }
 
