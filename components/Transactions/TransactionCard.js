@@ -6,6 +6,7 @@ const TransactionCard = ({ data }) => {
 
   return (
     <div className={styles.trans_card}>
+    
       {console.log(data)}
       <div className={styles.dir}>
         {data?.receiving ? (
