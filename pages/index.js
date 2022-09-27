@@ -12,6 +12,10 @@ import { useRef, useEffect } from "react";
 import Carousel from "../components/Exchange/Carousel";
 import TeamSection from "../components/Team"
 
+import { useRouter } from "next/router";
+import detectEthereumProvider from "@metamask/detect-provider";
+
+
 ////////////
 const baseUrl = "https://coinranking1.p.rapidapi.com/";
 const url = baseUrl + "coins";
@@ -24,6 +28,33 @@ const Home = () => {
   const Inview = useInView(ref2, { amount: 0.5 });
   const el = useRef(null);
   const typed = React.useRef(null);
+
+  const router = useRouter()
+
+  const IsMetaMaskInstalled = async () => {
+    const provider = await detectEthereumProvider({ mustBeMetaMask: true });
+
+    if (provider) {
+      console.log("Ethereum successfully detected!");
+      // From now on, this should always be true:
+      // provider === window.ethereum
+
+      // Access the decentralized web!
+
+      // Legacy providers may only have ethereum.sendAsync
+      const accounts = await ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      const account = accounts[0];
+      router.push("/account");
+    } else {
+      // if the provider is not detected, detectEthereumProvider resolves to null
+      // console.error("Please install MetaMask!", error);
+      console.log(`wasn't successful`);
+      setpop(true);
+      console.log(pop);
+    }
+  };
 
   useEffect(() => {
     const options = {
@@ -77,7 +108,9 @@ const Home = () => {
               >
                 A simple and intuitive way to crypto
               </motion.p>
-              <button className={styles.GetStartedButton}>
+              <button className={styles.GetStartedButton } onClick={() => {
+                IsMetaMaskInstalled()
+              }}>
                 Let's get Started
               </button>
             </Article>
