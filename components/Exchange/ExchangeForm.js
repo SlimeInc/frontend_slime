@@ -54,12 +54,12 @@ const ExchangeForm = () => {
           type="text"
           handleChange={handleChange}
         />
-        {/* <Input
+        <Input
           placeholder="Keyword"
           name="keyword"
           type="text"
           handleChange={handleChange}
-        /> */}
+        />
         <Input
           placeholder="Enter Message"
           name="message"
