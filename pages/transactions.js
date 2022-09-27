@@ -6,7 +6,6 @@ import styles from "../components/Main.module.scss";
 import { TransactionContext } from "../context/TransactionContext";
 import { useContext } from "react";
 
-const date = new Date();
 
 
 
