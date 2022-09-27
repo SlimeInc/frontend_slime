@@ -44,6 +44,9 @@ function Transactions() {
           ))
         }
       </div>
+
+    </div>
+   
   );
 };
 
