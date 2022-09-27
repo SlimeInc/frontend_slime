@@ -2,7 +2,7 @@ import { useState } from "react";
 import AvatarSection from "./AvatarSection";
 import SidebarLinks from "./SidebarLinks";
 import styles from "./Sidebar.module.scss";
-import Metamask_icon from "../Public/images/logos_metamask-icon.png";
+import Metamask_icon from "../public/images/logos_metamask-icon.png";
 
 export const Sidebar = () => {
   const [name, setName] = useState("Metamask Wallet");
