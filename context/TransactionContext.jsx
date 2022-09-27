@@ -160,7 +160,8 @@ export const TransactionProvider = ({ children }) => {
 
     //this runs only at the start of the program
     useEffect(() => {
-        checkForWalletConnection()
+        checkForWalletConnection();
+        checkIfTransactionsExist();
     }, [])
 
     return (
