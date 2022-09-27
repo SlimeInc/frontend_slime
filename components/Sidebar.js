@@ -7,7 +7,6 @@ import Metamask_icon from '../public/images/logos_metamask-icon.png'
 import { TransactionContext } from '../context/TransactionContext'
 export const Sidebar = () => {
   const {currentAccount} = useContext(TransactionContext)
-  console.log("Current acct in sidebar: ", currentAccount)
   
   return (
     <div className={styles.sidebar}>
