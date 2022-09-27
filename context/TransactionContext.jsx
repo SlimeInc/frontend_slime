@@ -59,9 +59,6 @@ export const TransactionProvider = ({ children }) => {
             }))
             console.log("Organized Transactions: ", organizedTransactions)
             setTransactions(organizedTransactions)
-            }else {
-                console.log("Ethereum object not detected!")
-            }
         } catch (error) {
             console.log("getAllTransactions() error: ", error)
         }
