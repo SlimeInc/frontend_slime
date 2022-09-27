@@ -50,4 +50,4 @@ function Transactions() {
   );
 };
 
-export default transactions;
+export default Transactions;
