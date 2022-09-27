@@ -12,7 +12,7 @@ import ChartStats from "../components/Account/ChartStats";
 const wallet = {
   BTC: { amt: "27" },
   USDT: { amt: "27567" },
-  SOL: { amt: "34" },
+  ETH: { amt: "34" },
 };
 
 const container = {

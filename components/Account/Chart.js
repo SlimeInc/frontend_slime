@@ -27,14 +27,14 @@ ChartJS.register(
 const wallet = {
   BTC: { amt: "27" },
   USDT: { amt: "27567" },
-  SOL: { amt: "34" },
+  ETH: { amt: "34" },
 };
 
 export function Chart({ cryptoList }) {
   const label = [];
   const priceTags = [];
   const [dropdown, setdropdown] = useState(false);
-  const [whichCoin, setwhichCoin] = useState(0);
+  const [whichCoin, setwhichCoin] = useState(2);
 
   console.log(cryptoList);
 

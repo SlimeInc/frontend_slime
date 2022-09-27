@@ -4,7 +4,7 @@ import DropDownItem from "./DropDownItem";
 const wallet = {
   BTC: { amt: "27" },
   USDT: { amt: "27567" },
-  SOL: { amt: "34" },
+  ETH: { amt: "34" },
 };
 const DropdownMenu = ({  dropdown, setdropdown ,setWhichCoin, whichCoin}) => {
   console.log(dropdown, Object.keys(wallet));

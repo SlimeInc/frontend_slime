@@ -13,9 +13,9 @@ const SidebarLinks = () => (
     <SidebarItem href="/exchanges">
       <GiPayMoney /> <span>Transfer</span>
     </SidebarItem>
-    <SidebarItem href="/transactions">
+    {/* <SidebarItem href="/transactions">
       <MdOutlineHistory /> <span>History</span>
-    </SidebarItem>
+    </SidebarItem> */}
     <SidebarItem href="https://coinranking.com/markets">
       <BsCurrencyExchange /><span>Market</span> 
       </SidebarItem>

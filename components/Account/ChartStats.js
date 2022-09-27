@@ -9,40 +9,36 @@ import { useContext } from "react";
 const wallet = {
   BTC: { amt: "27" },
   USDT: { amt: "27567" },
-  SOL: { amt: "34" },
+  ETH: { amt: "34" },
 };
 const ChartStats = ({ cryptoList }) => {
   const { walletBalance } = useContext(TransactionContext)
   console.log("wallet in chart ", walletBalance)
-  let num, denum;
-  num = cryptoList.reduce(function (accumulator, asset) {
-    return (
-      accumulator +
-      Number(asset?.price * wallet[asset?.symbol].amt * asset?.change)
-    );
-  }, 0);
-  denum = cryptoList.reduce(function (accumulator, asset) {
-    return accumulator + Number(asset?.price * wallet[asset.symbol].amt);
-  }, 0);
+  // let num, denum;
+  // num = cryptoList.reduce(function (accumulator, asset) {
+  //   return (
+  //     accumulator +
+  //     Number(asset?.price * wallet[asset?.symbol].amt * asset?.change)
+  //   );
+  // }, 0);
+  // denum = cryptoList.reduce(function (accumulator, asset) {
+  //   return accumulator + Number(asset?.price * wallet[asset.symbol].amt);
+  // }, 0);
   return (
     <section className={styles.chart_stats}>
       <h3>Wallet Summary</h3>
       <div className={styles.chart_cards}>
         {" "}
-        <StatsCard name="value">
+        <StatsCard name="balance">
           {" "}
           {
-            Number(
-              cryptoList?.reduce(function (accumulator, asset) {
-                return accumulator + asset?.price * wallet[asset.symbol].amt;
-              }, 0)
-            ).toFixed(3)
+           Number(walletBalance).toPrecision(3)
+           
           }
         </StatsCard>
-        <div>{walletBalance}</div>
-        <StatsCard name="change">
-          {((num / denum).toFixed(3) ?? 0) + "%"}
-        </StatsCard>
+        {/* <StatsCard name="change">
+          {0 + "%"}
+        </StatsCard> */}
       </div>
     </section>
   );
