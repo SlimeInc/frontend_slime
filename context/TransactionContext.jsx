@@ -170,6 +170,7 @@ export const TransactionProvider = ({ children }) => {
             formData, setFormData, 
             handleChange, 
             sendTransaction,
+            transactionCount,
             transactions, getAllTransactions, 
             }}
         >
