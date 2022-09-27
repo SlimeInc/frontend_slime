@@ -51,7 +51,7 @@ export const TransactionProvider = ({ children }) => {
             const transactionContract = getEthContract()
             const currentTransactions = await transactionContract.getAllTransactions()
             const organizedTransactions = currentTransactions.map((transaction) => ({
-                addressTo: transaction.receiver,
+                addressTo: transaction.recipient,
                 addressFrom: transaction.sender,
                 timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
                 message: transaction.keyword,
