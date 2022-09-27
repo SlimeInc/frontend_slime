@@ -1,5 +1,5 @@
 import React from "react";
-import WalletPic from "../../public/images/WalletPic.png";
+import WalletPic from "../../Public/images/WalletPic.png";
 import styles from "./Account.module.scss";
 
 const BeforeAssets = () => {
