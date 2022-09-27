@@ -33,9 +33,9 @@ const ExchangeForm = () => {
 
     if (!addressTo || !amount || !keyword || !message) return;
 
-    sendTransaction();
-  };
-  console.log("Current wallet: ", currentAccount);
+    sendTransaction()
+  }
+  console.log("current account: ", currentAccount)
 
   return (
     <div className={styles.exchange_form}>

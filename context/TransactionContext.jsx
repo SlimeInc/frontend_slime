@@ -30,6 +30,9 @@ export const TransactionProvider = ({ children }) => {
 
     useEffect(() => {
         const { ethereum } = window; //obtain ethereum object from metamask
+
+        setTransactionCount(localStorage.getItem("transactionCount"))
+
         console.log("Window object:", window)
         console.log("Ethereum object:", ethereum)
 
@@ -42,22 +45,20 @@ export const TransactionProvider = ({ children }) => {
 
     const getAllTransactions = async () => {
         try {
-            if(ethereum){
-                const transactionContract = getEthContract()
-                const currentTransactions = await transactionContract.getAllTransactions()
-                const organizedTransactions = currentTransactions.map((transaction) => ({
-                    addressTo: transaction.receiver,
-                    addressFrom: transaction.sender,
-                    timestamp: new Data(transaction.timestamp.toNumber() * 1000).toLocaleString(),
-                    message: transaction.keyword,
-                    amount: parseInt(transaction.amount._hex) / (10**18)
-                }))
-
-                console.log(organizedTransactions)
-                setTransactions(organizedTransactions)
-            }else {
-                console.log("Ethereum object not detected!")
+            if(!ethereum){
+                return alert("Please install Metamask")
             }
+            const transactionContract = getEthContract()
+            const currentTransactions = await transactionContract.getAllTransactions()
+            const organizedTransactions = currentTransactions.map((transaction) => ({
+                addressTo: transaction.recipient,
+                addressFrom: transaction.sender,
+                timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
+                message: transaction.keyword,
+                amount: parseInt(transaction.amount._hex) / (10**18)
+            }))
+            console.log("Organized Transactions: ", organizedTransactions)
+            setTransactions(organizedTransactions)
         } catch (error) {
             console.log("getAllTransactions() error: ", error)
         }
@@ -73,15 +74,26 @@ export const TransactionProvider = ({ children }) => {
             if (accountsAvailable.length) {
                 setCurrentAccount(accountsAvailable[0])
 
-                //getAllTransactions()
+                getAllTransactions()
             }else {
                 console.alert("No accounts found")
                 throw new Error("No ethereum object")
             }
-            console.log(accountsAvailable)
+            console.log("Accts available: ", accountsAvailable)
             
         } catch (error) {
             console.log(error)
+        }
+    }
+
+    const checkIfTransactionsExist = async () => {
+        try {
+            const transactionContract = getEthContract()
+            const transactionCount = await transactionContract.getTransactionCount()
+            console.log("transactions count: ", transactionCount)
+            window.localStorage.setItem("transactionCount", transactionCount);
+        } catch (error) {
+            console.log("checkIfTransactionsExist error: ", error)
         }
     }
 
@@ -124,7 +136,7 @@ export const TransactionProvider = ({ children }) => {
             })
 
             //store transaction on the blockchain
-            const transactionHash = await transactionContract.addToBlockChain(addressTo, convertedAmount, message, keyword)
+            const transactionHash = await transactionContract.addToBlockchain(addressTo, convertedAmount, message, keyword)
             
             setIsLoading(true)
             console.log(`Loading - ${transactionHash.hash}`)
@@ -136,16 +148,17 @@ export const TransactionProvider = ({ children }) => {
 
             const transactionCount = await transactionContract.getTransactionCount()
             setTransactionCount(transactionCount.toNumber())
+            window.location.reload()
 
         } catch (error) {
-            console.log(error)
-            throw new Error("No ethereum object")
+            console.log("Send Transaction error: ", error)
         }
     }
 
     //this runs only at the start of the program
     useEffect(() => {
-        checkForWalletConnection()
+        checkForWalletConnection();
+        checkIfTransactionsExist();
     }, [])
 
     return (
@@ -155,6 +168,7 @@ export const TransactionProvider = ({ children }) => {
             formData, setFormData, 
             handleChange, 
             sendTransaction,
+            transactionCount,
             transactions, getAllTransactions, 
             }}
         >
