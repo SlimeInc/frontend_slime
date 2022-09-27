@@ -30,6 +30,9 @@ export const TransactionProvider = ({ children }) => {
 
     useEffect(() => {
         const { ethereum } = window; //obtain ethereum object from metamask
+
+        setTransactionCount(localStorage.getItem("transactionCount"))
+        
         console.log("Window object:", window)
         console.log("Ethereum object:", ethereum)
 
