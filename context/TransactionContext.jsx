@@ -181,6 +181,7 @@ export const TransactionProvider = ({ children }) => {
             sendTransaction,
             transactionCount,
             transactions, getAllTransactions, 
+            walletDetails
             }}
         >
             { children }
