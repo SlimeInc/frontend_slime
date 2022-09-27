@@ -45,12 +45,14 @@ export const TransactionProvider = ({ children }) => {
 
     const getAllTransactions = async () => {
         try {
-            if(ethereum){
-                const transactionContract = getEthContract()
-                const currentTransactions = await transactionContract.getAllTransactions()
-                const organizedTransactions = currentTransactions.map((transaction) => ({
-                    addressTo: transaction.receiver,
-                    addressFrom: transaction.sender,
+            if(!ethereum){
+                return alert("Please install Metamask")
+            }
+            const transactionContract = getEthContract()
+            const currentTransactions = await transactionContract.getAllTransactions()
+            const organizedTransactions = currentTransactions.map((transaction) => ({
+                addressTo: transaction.receiver,
+                addressFrom: transaction.sender,
                     timestamp: new Data(transaction.timestamp.toNumber() * 1000).toLocaleString(),
                     message: transaction.keyword,
                     amount: parseInt(transaction.amount._hex) / (10**18)
