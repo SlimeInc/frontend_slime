@@ -53,10 +53,10 @@ export const TransactionProvider = ({ children }) => {
             const organizedTransactions = currentTransactions.map((transaction) => ({
                 addressTo: transaction.receiver,
                 addressFrom: transaction.sender,
-                    timestamp: new Data(transaction.timestamp.toNumber() * 1000).toLocaleString(),
-                    message: transaction.keyword,
-                    amount: parseInt(transaction.amount._hex) / (10**18)
-                }))
+                timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
+                message: transaction.keyword,
+                amount: parseInt(transaction.amount._hex) / (10**18)
+            }))
 
                 console.log(organizedTransactions)
                 setTransactions(organizedTransactions)
