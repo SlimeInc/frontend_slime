@@ -57,9 +57,8 @@ export const TransactionProvider = ({ children }) => {
                 message: transaction.keyword,
                 amount: parseInt(transaction.amount._hex) / (10**18)
             }))
-
-                console.log(organizedTransactions)
-                setTransactions(organizedTransactions)
+            console.log("Organized Transactions: ", organizedTransactions)
+            setTransactions(organizedTransactions)
             }else {
                 console.log("Ethereum object not detected!")
             }
