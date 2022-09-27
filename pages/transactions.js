@@ -1,7 +1,10 @@
 import TransactionHead from "../components/Transactions/TransactionHead";
 import TransactionCard from "../components/Transactions/TransactionCard";
 import TransactionsHolder from "../components/Transactions/TransactionsHolder";
-import styling from "../components/Main.module.scss";
+import styles from "../components/Main.module.scss";
+
+import { TransactionContext } from "../context/TransactionContext";
+import { useContext } from "react";
 
 const date = new Date();
 
