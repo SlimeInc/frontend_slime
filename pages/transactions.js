@@ -31,20 +31,19 @@ function Transactions() {
   
   console.log("current transactions: ", transactions)
   return (
-    <div className={styling.main}>
-      <TransactionHead />
-      <TransactionsHolder>
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} /> <TransactionCard data={data} />
-        <TransactionCard data={data} />
-        <TransactionCard data={data} />
-      </TransactionsHolder>
-      ;
-    </div>
+    <div className={styles.all_txt}>
+      {currentAccount ? (
+        <h3>Recent Transactions</h3>
+      ) : (
+        <h3>Connect to Metamask to see your recent transactions.</h3>
+      )}
+      <div>
+        {
+          [...transactions].reverse().map((transaction, i) => (
+            <TransactionsFrame key={i} {...transaction} />
+          ))
+        }
+      </div>
   );
 };
 
