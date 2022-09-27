@@ -10,7 +10,7 @@ import { useContext } from "react";
 
 
 const TransactionsFrame = ({ addressTo, addressFrom, timestamp, message, amount }) => {
-  
+
   return (
     <div>
       <div>
@@ -23,7 +23,6 @@ const TransactionsFrame = ({ addressTo, addressFrom, timestamp, message, amount 
         <p>Amount: {amount} Eth</p>
         {message && 
           <>
-            <br />
             <p>Message: {message}</p>
           </>
         }
@@ -31,6 +30,7 @@ const TransactionsFrame = ({ addressTo, addressFrom, timestamp, message, amount 
       <div>
         <p>{timestamp}</p>
       </div>
+      <br />
     </div>
   )
 }
