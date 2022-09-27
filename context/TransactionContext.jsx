@@ -26,6 +26,7 @@ export const TransactionProvider = ({ children }) => {
     const [formData, setFormData] = useState({ addressTo: '', amount: '', keyword: '', message: '' })
     const [isLoading, setIsLoading] = useState(false)
     const [transactions, setTransactions] = useState([])
+    const [walletBalance, setWalletBalance] = useState()
     const [transactionCount, setTransactionCount] = useState(0) //cache transactionCount in localStorage.getItem('transactionCount')
 
     useEffect(() => {
@@ -159,6 +160,7 @@ export const TransactionProvider = ({ children }) => {
         try {
             const balance = await ethereum.request({ method: 'eth_getBalance', params: [currentAccount, 'latest']})
             const parsedBalance = ethers.utils.formatEther(balance)
+            setWalletBalance(parsedBalance)
             console.log("Wallet Balance: ", parsedBalance)
         } catch (error) {
             console.log("Wallet details error: ", error)
@@ -181,7 +183,7 @@ export const TransactionProvider = ({ children }) => {
             sendTransaction,
             transactionCount,
             transactions, getAllTransactions, 
-            walletDetails
+            walletBalance
             }}
         >
             { children }

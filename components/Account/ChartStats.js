@@ -1,12 +1,19 @@
 import styles from "./Account.module.scss";
 import StatsCard from "./StatsCard";
 import { HiOutlineArrowTrendingDown, HiArrowTrendingUp } from "react-icons/hi";
+
+import { TransactionContext } from "../../context/TransactionContext";
+import { useContext } from "react";
+
+
 const wallet = {
   BTC: { amt: "27" },
   USDT: { amt: "27567" },
   SOL: { amt: "34" },
 };
 const ChartStats = ({ cryptoList }) => {
+  const { walletBalance } = useContext(TransactionContext)
+  console.log("wallet in chart ", walletBalance)
   let num, denum;
   num = cryptoList.reduce(function (accumulator, asset) {
     return (
@@ -32,6 +39,7 @@ const ChartStats = ({ cryptoList }) => {
             ).toFixed(3)
           }
         </StatsCard>
+        <div>{walletBalance}</div>
         <StatsCard name="change">
           {((num / denum).toFixed(3) ?? 0) + "%"}
         </StatsCard>
